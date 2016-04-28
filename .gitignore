@@ -78,6 +78,15 @@ Thumbs.db
 *.tar
 *.zip
 
+
+# Aggiunte
+	
+sftp-config.json
+_db
+_ole
+_olegit
+_tmp
+
 # -------------------------
 # BEGIN Whitelisted Files
 # -------------------------
@@ -105,4 +114,8 @@ Thumbs.db
 !wp-content/plugins/cnsg-flex2/
 !wp-content/plugins/cnsg-chartsjs/
 !wp-content/plugins/cnsg-scrivecolorato/
-!wp-content/themes/cnsg/
+!wp-content/themes/cnsg
+
+
+
+
