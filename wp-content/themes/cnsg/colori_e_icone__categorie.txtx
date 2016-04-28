@@ -1,0 +1,75 @@
+da 40 a 51
+UPDATE `cnsgtest_term_taxonomy` SET `taxonomy`="categorie_progetto" WHERE `taxonomy` = "progetto"
+
+es:
+Epidemiology ID= 46 collegato in relationship a 84 e 198
+progetto_40_colore_della_categoria 	#a0220a	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9852 	progetto_41_colore_della_categoria 	#8a8444	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9864 	progetto_42_colore_della_categoria 	#956f3e	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9876 	progetto_43_colore_della_categoria 	#a8a200	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9889 	progetto_44_colore_della_categoria 	#88101d	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9904 	progetto_45_colore_della_categoria 	#ac502a	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9917 	progetto_46_colore_della_categoria 	#735079	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9930 	progetto_47_colore_della_categoria 	#6c8229	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9945 	progetto_48_colore_della_categoria 	#735079	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9958 	progetto_49_colore_della_categoria 	#25545d	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9970 	progetto_50_colore_della_categoria 	#956f3e	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9982 	progetto_51_colore_della_categoria 	#005287
+
+
+	poi c'il 63 che è quello nuovo
+
+
+	
+
+
+	Edit Edit 	Copy Copy 	Delete Delete 	40 	Basic and Translational Research 	basic-and-translational-research 	0
+	
+	Edit Edit 	Copy Copy 	Delete Delete 	42 	Clinical Research 	clinical-research 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	43 	Education and Training 	education-and-training 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	44 	Health Systems Research, Innovative Models of Care 	health-systems-research-innovative-models-of-care 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	45 	International Cooperation 	international-cooperation 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	46 	Maternal, Newborn and Child Health (MNCH) 	maternal-newborn-and-child-health-mnch 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	47 	Migration Medicine 	migration-medicine 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	48 	Natural Substances, Traditional Medicine, Integrat... 	natural-substances-traditional-medicine-integrated... 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	49 	Operational and Implementation Research 	operational-and-implementation-research 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	50 	Policy and Advocacy 	policy-and-advocacy 	0
+	Edit Edit 	Copy Copy 	Delete Delete 	51 	Work with International Organizations and the UN S... 	work-with-international-organizations-and-the-un-s...
+
+
+
+													progetto_40_icona_della_categoria 	flaticon-dna19	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9850 	progetto_41_icona_della_categoria 	flaticon-atom27	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9862 	progetto_42_icona_della_categoria 	flaticon-science70	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9874 	progetto_43_icona_della_categoria 	flaticon-graduate34	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9887 	progetto_44_icona_della_categoria 	flaticon-hospitals1	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9902 	progetto_45_icona_della_categoria 	flaticon-agreement	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9915 	progetto_46_icona_della_categoria 	flaticon-baby23	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9928 	progetto_47_icona_della_categoria 	flaticon-medical109	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9943 	progetto_48_icona_della_categoria 	flaticon-medicines4	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9956 	progetto_49_icona_della_categoria 	flaticon-school93	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9968 	progetto_50_icona_della_categoria 	flaticon-capitol1	no
+	Edit Edit 	Copy Copy 	Delete Delete 	9980 	progetto_51_icona_della_categoria 	flaticon-earth213
+
+	     Edit 	Copy Copy 	Delete Delete 	15887 	categorie_progetto_63_icona_della_categoria 	flaticon-atom27	
+
+
+
+ ######   #######  ########  ########  ######## ######## ####  #######  ##    ## #### 
+##    ## ##     ## ##     ## ##     ## ##            ##   ##  ##     ## ###   ##  ##  
+##       ##     ## ##     ## ##     ## ##           ##    ##  ##     ## ####  ##  ##  
+##       ##     ## ########  ########  ######      ##     ##  ##     ## ## ## ##  ##  
+##       ##     ## ##   ##   ##   ##   ##         ##      ##  ##     ## ##  ####  ##  
+##    ## ##     ## ##    ##  ##    ##  ##        ##       ##  ##     ## ##   ###  ##  
+ ######   #######  ##     ## ##     ## ######## ######## ####  #######  ##    ## #### 
+
+
+
+
+	     1° in _options: SELECT * FROM `cnsgtest_options` WHERE `option_value` LIKE 'flaticon%'  e aggiungere categorie_ davanti a progetto_##
+	     2° in _options: SELECT * FROM `cnsgtest_options` WHERE `option_value` LIKE '#%'   e aggiungere categorie_ davanti a progetto_##
+
+
+
+
+	     
