@@ -63,10 +63,16 @@ $rl_category_color = get_field('colore_della_categoria',$rl_res );
   <div class="articolo columns medium-10 medium-push-1 large-6 large-push-2">
     
 
-    <div class="first-row-padded">
-            <h3 style="color:<?php echo $rl_category_color; ?>">Categoria: <?php echo $categories[0]->name; ?></h3>
+    <div>
+            <h3 style="color:<?php echo $rl_category_color; ?>"><?php echo $categories[0]->name; ?></h3>
             <h1><?php the_title(); ?></h1>
     </div>
+
+        <div>
+            <h3 class="excerpt"><?php echo get_the_excerpt(); ?></h3>
+            
+      </div>
+
              <?php the_content( ); ?>
              <h3><?php //print_r($post); ?></h3>
 
@@ -104,14 +110,23 @@ $rl_category_color = get_field('colore_della_categoria',$rl_res );
 
 
 
-        <h2 style="color:<?php echo $rl_category_color; ?>">Staff</h2>
+        <h2 style="color:<?php echo $rl_category_color; ?>">Coordinators & Staff</h2>
         
         <ul class="staff-list">
         
         <?php foreach ( $staff as $person ) : ?>
         
             <li>
-                <?php echo get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); ?>
+                <?php 
+                  // echo get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
+                  $thumb = get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
+                  if ( $thumb == "" ) {
+                    echo '<img src="https://pbs.twimg.com/profile_images/682452187545337856/Znwroimx.jpg" alt="" class="staff-mini-image" />';
+                  } else {
+                    echo $thumb;
+                  }
+
+                ?>
                 
                 <a href="<?php echo get_permalink($person->ID); ?>"><h4 style="color:<?php echo $rl_category_color; ?>">
                     <?php echo $person->post_title ?></h4></a>
