@@ -49,7 +49,7 @@ function registra_custom_post() {
 		'labels' => $labels,
 		'hierarchical' => true,
 		'description' => __( 'Progetti CNSG', 'progetto' ),
-		'supports' => array( 'title', 'editor', 'excerpt','thumbnail' ),
+		'supports' => array( 'title', 'editor', 'thumbnail' ),
 		'public' => true,
 		'menu_icon' => 'dashicons-admin-page',
 		'show_ui' => true,
@@ -190,14 +190,15 @@ function registra_categorie_default() {
 	);
 
 
+	// Utilizza anche i TAGS per i progetti
+	register_taxonomy_for_object_type('post_tag', 'progetto');
+
 	register_taxonomy( 'categorie_progetto', array('post','progetto'), $args );
 	//register_taxonomy( 'progetto', array('post','progetto','pubblicazione','documento','staff'), $args );
 	// register_taxonomy_for_object_type('progetto', 'post');
 	// register_taxonomy_for_object_type('progetto', 'staff');
 	// register_taxonomy_for_object_type('progetto', 'documento');
 	// register_taxonomy_for_object_type('progetto', 'pubblicazione');
-
-
 
 }
 
@@ -305,6 +306,34 @@ add_action( 'restrict_manage_posts', 'progetto_add_taxonomy_filters' );
 add_action( 'p2p_init', 'join_projects_to_services' );
 
 function join_projects_to_services(){
+
+	// Connessione tra staff e progetto come coordinatore di progetto
+	p2p_register_connection_type( array(
+		'name' => 'coordinator_to_progetto',
+		'title' => array(
+			'from' => 'Progetti coordinati',
+    		'to' => 'Coordinatori'
+			),		
+		'from' => 'staff',
+		'to' => 'progetto',
+		'to_labels' => array(
+		      'singular_name' => __( 'Progetti', 'my-textdomain' ),
+		      'search_items' => __( 'Cerca progetto', 'my-textdomain' ),
+		      'not_found' => __( 'No items found.', 'my-textdomain' ),
+		      'create' => __( 'Create Connections', 'my-textdomain' ),
+		  ),
+		'from_labels' => array(
+		      'singular_name' => __( 'Coordinatori progetto', 'my-textdomain' ),
+		      'search_items' => __( 'Search persone', 'my-textdomain' ),
+		      'not_found' => __( 'No items found.', 'my-textdomain' ),
+		      'create' => __( 'Create Connections', 'my-textdomain' ),
+		      'new_item' => __( 'Crea nuovo', 'my-textdomain' ),
+		      'add_new_item' => __( 'Aggiungi nuovo', 'my-textdomain' )
+		  )		
+
+		) );		
+
+	// Connessione tra staff e progetto come staff
 	p2p_register_connection_type( array(
 		'name' => 'staff_to_progetto',
 		'title' => array(
@@ -329,6 +358,8 @@ function join_projects_to_services(){
 		  )		
 
 		) );
+
+
 	p2p_register_connection_type( array(
 		'name' => 'documento_to_progetto',
 		'title' => array(

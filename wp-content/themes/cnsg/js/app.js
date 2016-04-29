@@ -131,48 +131,42 @@ $('.info-expander').click(function(event) {
         tl.to($(this), 0.1, {'margin-top':10}).to($(this), 0.3, {'margin-top':0});
       });
 
-
      // Inattiva i menu principali
-
       $('li.menu-item-has-children>a').each(function(index, el) {
         $(this).removeAttr('href');
         $(this).addClass('inactive-menu-a')
       });
-
       
-
       // Mostra la mappa full screen del sito
 
       $('.fullscreen-map-toggler').click(function(event) {
-          //event.preventDefault();          
+          event.preventDefault();          
           toggleFullscreenMap();                
       });      
 
       function toggleFullscreenMap() {
-        
-        // Se non è visibile
-          if ($('#fullscreen-mega-map').css('display') === 'none') {
-            $('body').css('overflow', 'hidden');
-            $(this).parent().css('backgroundColor', '#EFEFE8');
-            $('#fullscreen-mega-map').css('overflow', 'auto');
-            TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:1,display:'block', top:$(window).scrollTop()});
-            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
-          } 
-          // Se invece è il menu è aperto
-          else{
-            TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
-            $(this).parent().css('backgroundColor', 'transparent');
-            $('body').css('overflow', 'auto');
-            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
-          }    
-
+        TweenMax.to( $(".fullscreen-mega-map-active"), 0.6, { css:{className:"fullscreen-mega-map-inactive"} });    
+        TweenMax.to( $(".fullscreen-mega-map-inactive"), 0.2, { css:{className:"fullscreen-mega-map-active"} });    
+        // // Se non è visibile
+        //   if ($('#fullscreen-mega-map').css('display') === 'none') {
+        //     $('body').css('overflow', 'hidden');
+        //     $(this).parent().css('backgroundColor', '#EFEFE8');
+        //     $('#fullscreen-mega-map').css('overflow', 'auto');
+        //     TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:1,display:'block', top:$(window).scrollTop()});
+        //     $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
+        //   } 
+        //   // Se invece è il menu è aperto
+        //   else{
+        //     TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
+        //     $(this).parent().css('backgroundColor', 'transparent');
+        //     $('body').css('overflow', 'auto');
+        //     $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
+        //   }    
       };
-
       // Chiude la mappa fullscreen cliccandoci sopra ma i link continuano a funzionare
       $('#fullscreen-mega-map').click(function(event) {        
           //event.preventDefault();
-          toggleFullscreenMap();
-         
+          toggleFullscreenMap();         
       });   
 
 

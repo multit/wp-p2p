@@ -27,7 +27,7 @@ colore:#008173
 */
 
 
-$colore-amministrazione: #F4F4ED;
+$colore-grigio-fondo: #F4F4ED;
 
 $font-principale: 'Roboto-Slab-light';
 $font-principale-bold: 'Roboto-Slab-regular';
@@ -62,13 +62,16 @@ body {
 }
 
 body.login {
-	background-color: $colore-amministrazione;
+	background-color: $colore-grigio-fondo;
 }
 
 .paragrafo-stretto {
 	font-size: 0.8em;
 	line-height: 0.8em;
 }
+
+h1, h2, h3, h4, h5, h6 {
+   color: darken( $colore-grigio-fondo, 70% );}
 
 h1 {
 	font-family: $font-principale-bold;
@@ -80,7 +83,6 @@ h2 {
     font-family: $font-principale-bold;
     font-size: 1.4em;
     line-height: 1em;
-    color: #555555;
     margin-bottom: 10px;
 }
 
@@ -89,6 +91,7 @@ h3 {
 	text-transform: uppercase;
 	font-size: 0.8em;
 	letter-spacing: 0.1em;
+	line-height: 0.8em;
 }
 h4 {
 	font-family: $font-principale-bold;
@@ -110,7 +113,10 @@ h6 {
 }
 
 
-
+p {
+	padding: 0;
+	margin: 0;
+}
 
 
 
@@ -133,7 +139,7 @@ h6 {
 /*Un Po di reset*/
 
 a {
-	color: #888;
+	color: darken( $colore-grigio-fondo, 70% );
 }
 
 a:hover {
@@ -142,8 +148,8 @@ a:hover {
     
 ul {
     list-style: none;
-/*    padding: 0 !important;
-    margin: 0 !important;*/
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .titolino {
@@ -228,7 +234,7 @@ ul {
 .logo p {
 	font-family: $font-secondaria;
 	text-transform: uppercase;	
-	color: #AC9865;
+	color: darken( $colore-grigio-fondo, 35% );
 	letter-spacing: 0.2em;
 	font-size: 1em;
 	margin: 0;
@@ -240,7 +246,7 @@ p.logo_payoff {
 	font-size: 0.9em;
 	letter-spacing: 0.2em;
 	text-transform: capitalize;	
-	color: #666;
+	color: darken( $colore-grigio-fondo, 70% );;
 	text-align: center;
 	background: transparent url('../images/logo-shadow.png') 50% 100% no-repeat;
 	height: 80px;
@@ -666,6 +672,28 @@ b.attach_size {
 	min-height: 200px;
 }
 
+
+ul.document-box {
+	li {
+		margin-bottom: 20px;
+		p.doc-autori, a {
+			@extend h3;
+			line-height: 1.3em;
+			font-size: 0.7em;
+			margin-bottom: 5px;	
+		}
+		p.doc-titolo {
+			line-height: 1.3em;
+			font-size: 0.9em;
+		}
+		div.doc-abstract {
+			display:none;
+		}
+	}	
+}
+
+
+
 /*
 ########  #######   #######  ######## ######## ########  
 ##       ##     ## ##     ##    ##    ##       ##     ## 
@@ -679,7 +707,7 @@ b.attach_size {
 div.footer-container {
 	min-height: 400px;
 	width: 100%;
-	background: $colore-amministrazione url(../images/cnsg.logo.white.png) no-repeat 50% 20px;
+	background: $colore-grigio-fondo url(../images/cnsg.logo.white.png) no-repeat 50% 20px;
 	-webkit-background-size: 80px;
 	background-size: 100px;
 	padding: 160px 0 0 0;
@@ -754,7 +782,7 @@ div.menutop  {
 	z-index: 150;
 	top: 0;
 	left: 0;
-	background-color: $colore-amministrazione;
+	background-color: $colore-grigio-fondo;
 	height: 67px;
 	width: 100%;
 	padding:0 10px 0 10px;
@@ -816,7 +844,7 @@ div.menudue {
 	width: 100%;
 	height: 67px;
 	padding: 20px 0 10px 0;
-    background: $colore-amministrazione url('../images/cnsg-minilogo.png') no-repeat 50% 50%;
+    background: $colore-grigio-fondo url('../images/cnsg-minilogo.png') no-repeat 50% 50%;
     /*	-webkit-background-size: contain;
 	background-size: contain;*/
 }
@@ -849,8 +877,8 @@ div.menudue {
 
 */
 
-div#fullscreen-mega-map{
-	background-color: #EFEFE8;
+div#fullscreen-mega-map {
+	background-color: darken( $colore-grigio-fondo, 2% );
 	position: absolute;
 	top:0px;
 	left: 0px;
@@ -858,21 +886,26 @@ div#fullscreen-mega-map{
 	width: 100%;
 	z-index: 102;
 	padding: 50px 0 200px 0;
-	display: none;
+	// display: none;
+	// opacity: 0;
+	margin-top: -33px;
+}
+.fullscreen-mega-map-inactive {
 	opacity: 0;
-	margin-top: -33px;	
+	display: none;;
+}
+.fullscreen-mega-map-active {
+	opacity: 1;
+	display: block;
 }
 .logo-fullscreen-map {
 	padding: 35px 0 80px 0;
 }
-
 ul#menu-menu-progetti ul {
-	/* style */
 	border: 0px solid #FFF;
 	margin: 0px;
 	padding: 10px 0 10px 0;
 }
-
 ul#menu-menu-progetti li, ul.sub-menu li {
 	margin: 0px;
 	
@@ -891,11 +924,18 @@ ul.sub-menu li.menu-item-object-progetto a {
 	font-family: $font-principale-bold;
 	font-size: 15px;
 }
-
 a.inactive-menu-a:hover {
 	text-decoration: none;
 	color: #888;
 	cursor:default;
+}
+i.fa-times {
+	position: absolute;
+	top: -10px;
+	left: 100%;
+	color: darken( $colore-grigio-fondo, 50% );
+	font-size: 1.6em;
+	cursor: pointer;
 }
 
 /*
@@ -929,7 +969,7 @@ a.inactive-menu-a:hover {
 	height: 40px;
 	width: 100%;
 	z-index: -1;
-	background-color: $colore-amministrazione;
+	background-color: $colore-grigio-fondo;
 }
 aside.left-off-canvas-menu {
 	padding-top: 120px;
