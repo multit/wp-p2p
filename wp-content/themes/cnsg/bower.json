@@ -1,0 +1,28 @@
+{
+  "name": "Cnsg Wordpress Theme",
+  "version": "0.0.0",
+  "homepage": "www.andreafiorelli.com",
+  "authors": [
+    "multit <andrea.fiorelli@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.php",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexslider": "~2.6.0",
+    "font-awesome": "~4.6.1",
+    "gsap": "~1.18.4",
+    "jquery-scrollspy": "*",
+    "foundation-sites": "~6.2.1",
+    "modernizr": "~3.3.1",
+    "datamaps": "~0.5.1"
+  }
+}

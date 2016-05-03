@@ -1,0 +1,1 @@
+<a href="<?php echo get_post_permalink( ); ?>"><?php echo get_the_title( ); ?></a><br>

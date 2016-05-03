@@ -33,9 +33,9 @@
 
                     <?php
                       // Settiamo alcune variabili
-                      $categorie = get_the_terms( $post->ID, "categorie_progetto" );
+                      $categorie = get_the_terms( $post->ID, "projects" );
 
-                      $parent = get_term($categorie[0]->parent,"categorie_progetto" );
+                      $parent = get_term($categorie[0]->parent,"projects" );
                       if ($parent->term_id) {
                           $rl_res = $parent->taxonomy . '_' .  $parent->term_id;
                           $rl_category_color = get_field('colore_della_categoria',$rl_res );

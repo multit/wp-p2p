@@ -9,6 +9,7 @@ var app = (function(document, $) {
 		},
 		_init = function() {
 
+      //console.info(Modernizr);
 
 			$(document).foundation();
       // needed to use joyride
@@ -19,27 +20,24 @@ var app = (function(document, $) {
       });
 			_userAgentInit();
 
+      // Modernizr
 			// SVG / PNG sostituisce i svg con PNG per i browser più vecchi
 			// Per ora abbiamo solo il logo 
-			  if(!Modernizr.svg) {
-			    $('img[src*="svg"]').attr('src', function () {
-			    return $(this).attr('src').replace('.svg', '.png');
-			  });
-			}
-
+      if ( typeof Modernizr != 'undefined' ) {
+  			 if(!Modernizr.svg) {
+  			    $('img[src*="svg"]').attr('src', function () {
+  			    return $(this).attr('src').replace('.svg', '.png');
+  			  });
+  			}
+      }
       //console.log(Foundation.MediaQuery);
 
       $(window).load(function() {
         //console.log('window loaded da init');
-        var tl = new TimelineLite();
-        // tl.to('#ajax-loader', 0.3, {scale:1.3,})
-        tl.to('#ajax-loader', 0.4, {delay:1,rotation:720, scale:0, ease:Cubic.easeOut})        
-        //.to('#ajax-loader', 0.4, {scale:0, rotation:360, ease:Cubic.easeOut})
+        var tl = new TimelineLite();        
+        tl.to('#ajax-loader', 0.4, {delay:1,rotation:720, scale:0, ease:Cubic.easeOut})                
         .to('#loader', 0.3, {autoAlpha:0});
       });
-
-
-
 
 
 
@@ -241,7 +239,7 @@ $('.info-expander').click(function(event) {
                     TweenMax.to('div#logo-area',0.8,{ 'top': 67 });
                  },
                  onLeave: function(element, position) {
-                    console.log('exit');
+                   
                     $('div.logo_large.animated').css({ 'padding-top':endVal.pt, 'background-size':endVal.hb, 'margin-top':endVal.mt });
                     $('#logo-spacer.animated').css({'height': endVal.bm});
                     $('#menutop-logo.animated').css({

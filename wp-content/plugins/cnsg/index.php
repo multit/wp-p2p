@@ -21,7 +21,7 @@ License: GPLv2 or later
 // 1. progetto
 // 2. documento
 // 3. staff
-// 4. pubblicazione
+// 4. pubblicazione_to_progetto
 
 
 // 1. Menu Progetti
@@ -169,15 +169,15 @@ function my_post_edit_columns($columns){
 
 // Crea le categorie dei progetti Sospeso!!
 
-add_action('init', 'registra_categorie_default');
+add_action('init', 'registra_categorie_dei_progetti');
 
-function registra_categorie_default() {
+function registra_categorie_dei_progetti	() {
 
 
 	$labels = array(
 		'name'                  => 'Categorie Progetto',
 		'add_new_item'			=> 'Nuovo Categoria Progetto',
-		'edit_item' 			=> 'Modifica Categria Progetto'
+		'edit_item' 			=> 'Modifica Categoria Progetto'
 	);
 
 	$args = array(
@@ -190,17 +190,48 @@ function registra_categorie_default() {
 	);
 
 
-	// Utilizza anche i TAGS per i progetti
-	register_taxonomy_for_object_type('post_tag', 'progetto');
-
-	register_taxonomy( 'categorie_progetto', array('post','progetto'), $args );
+	register_taxonomy( 'projects', array('post','progetto'), $args );
 	//register_taxonomy( 'progetto', array('post','progetto','pubblicazione','documento','staff'), $args );
 	// register_taxonomy_for_object_type('progetto', 'post');
 	// register_taxonomy_for_object_type('progetto', 'staff');
 	// register_taxonomy_for_object_type('progetto', 'documento');
 	// register_taxonomy_for_object_type('progetto', 'pubblicazione');
 
+	// Utilizza anche i TAGS per i progetti
+	register_taxonomy_for_object_type('post_tag', 'progetto');
+
 }
+
+
+// Utilities
+
+// Param $articolo = object|int $post
+// Utilizza il plugin Custom Fields
+// Ritorna un oggetto con colore e nome della categoria
+// Utilizza solo la prima taxonomy !!!!
+// Aggiornare se biene modificato il nome della taxonomy (10 righe sopra)
+
+function get_dettagli_categoria( $articolo ) {
+	
+	$terms = get_the_terms( $articolo, "projects" );
+	$rl_res = $terms[0]->taxonomy . '_' .  $terms[0]->term_id;
+	$rl_category_color = get_field('colore_categoria',$rl_res );
+	$rl_icona = get_field('icona_categoria',$rl_res );	
+	$cat = array(		
+		'nome_categoria' => $terms[0]->name,
+		'colore' => $rl_category_color, 
+		'icona_categoria' => $rl_icona
+		 );	
+
+	return $cat;
+
+}
+
+
+
+
+
+
 
 
 // Aggiunta tinyMCE alla descrizione delle categorie

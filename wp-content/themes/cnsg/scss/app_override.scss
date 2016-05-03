@@ -1,14 +1,17 @@
-/* banner 3
- ######  ######## #### ##       ####    ########     ###    ########     ###     ######   ########     ###    ########  #######  
-##    ##    ##     ##  ##        ##     ##     ##   ## ##   ##     ##   ## ##   ##    ##  ##     ##   ## ##   ##       ##     ## 
-##          ##     ##  ##        ##     ##     ##  ##   ##  ##     ##  ##   ##  ##        ##     ##  ##   ##  ##       ##     ## 
- ######     ##     ##  ##        ##     ########  ##     ## ########  ##     ## ##   #### ########  ##     ## ######   ##     ## 
-      ##    ##     ##  ##        ##     ##        ######### ##   ##   ######### ##    ##  ##   ##   ######### ##       ##     ## 
-##    ##    ##     ##  ##        ##     ##        ##     ## ##    ##  ##     ## ##    ##  ##    ##  ##     ## ##       ##     ## 
- ######     ##    #### ######## ####    ##        ##     ## ##     ## ##     ##  ######   ##     ## ##     ## ##        #######  
+/*
+
+Developed by:
+    ___       ___       ___       ___       ___       ___            ___       ___       ___       ___       ___       ___       ___       ___   
+   /\  \     /\__\     /\  \     /\  \     /\  \     /\  \          /\  \     /\  \     /\  \     /\  \     /\  \     /\__\     /\__\     /\  \  
+  /::\  \   /:| _|_   /::\  \   /::\  \   /::\  \   /::\  \        /::\  \   _\:\  \   /::\  \   /::\  \   /::\  \   /:/  /    /:/  /    _\:\  \ 
+ /::\:\__\ /::|/\__\ /:/\:\__\ /::\:\__\ /::\:\__\ /::\:\__\      /::\:\__\ /\/::\__\ /:/\:\__\ /::\:\__\ /::\:\__\ /:/__/    /:/__/    /\/::\__\
+ \/\::/  / \/|::/  / \:\/:/  / \;:::/  / \:\:\/  / \/\::/  /      \/\:\/__/ \::/\/__/ \:\/:/  / \;:::/  / \:\:\/  / \:\  \    \:\  \    \::/\/__/
+   /:/  /    |:/  /   \::/  /   |:\/__/   \:\/  /    /:/  /          \/__/   \:\__\    \::/  /   |:\/__/   \:\/  /   \:\__\    \:\__\    \:\__\  
+   \/__/     \/__/     \/__/     \|__|     \/__/     \/__/                    \/__/     \/__/     \|__|     \/__/     \/__/     \/__/     \/__/  
+
+www.andreafiorelli.com
+
 */
-
-
 
 /*
 12 Colori set scuro
@@ -78,12 +81,13 @@ h1 {
 	font-size: 2.5em;
 	line-height: 1.1em;
 	letter-spacing: -0.02em;
+	padding:0 0 30px 0;
 }
 h2 {
     font-family: $font-principale-bold;
-    font-size: 1.4em;
+    font-size: 1.3em;
     line-height: 1em;
-    margin-bottom: 10px;
+    padding: 0 0 10px 0;
 }
 
 h3 {
@@ -91,7 +95,7 @@ h3 {
 	text-transform: uppercase;
 	font-size: 0.8em;
 	letter-spacing: 0.1em;
-	line-height: 0.8em;
+	line-height: 1.2em;
 }
 h4 {
 	font-family: $font-principale-bold;
@@ -101,13 +105,13 @@ h4 {
 }
 
 h5 {
-	font-family: $font-principale-bold;
+	font-family: $font-principale;
 	font-size: 0.9em;
-	line-height: 1.2em;
+	line-height: 1.4em;
 }
 
 h6 {
-	font-family: $font-principale-bold;
+	font-family: $font-principale;
 	font-size: 0.8em;
 	line-height: 1em;
 }
@@ -570,10 +574,12 @@ img.single-article-featured {
 */
 
 article {
-	min-height: 800px;
-	
+	min-height: 800px;	
 }
 
+.main-proj-column {
+	border-right:1px solid #ccc;
+}
 
 img.thumb-288 {
 	width: 288px;
@@ -596,11 +602,16 @@ div.colored-box:first-child {
 }
 
 ul.staff-list li {
-	text-align: center;
-	margin: 0 0 40px 0;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+
+	 a, a:visited {
+	 	color: #000000	;
+	 }
 }
 
-h3.excerpt {
+h3.excerpt, h3.proj_main_goal {
 	color: #666;
     font-size: 0.8em;
     line-height: 1.5em;
@@ -608,14 +619,15 @@ h3.excerpt {
 }
 
 .staff-mini-image {
-	width: 90px;
-	height: 90px;
+	width: 70px;
+	height: 70px;
 	border-radius: 50%;
-	margin: 0 0 10px 0;
+	margin: 0 0 5px 0;
 }
 .staff-big-image {
 	margin-top: 20px;
 }
+
 
 ul.social-list {
 	margin: -5px 0 0 -5px;
@@ -649,28 +661,7 @@ b.attach_size {
 	top: 45px;
 	left: 0;
 }
-.right-column {
-	border-left:1px solid #ccc;
-	padding-left: 10px;
-	min-height: 780px;
 
-}
-.right-column:before {
-/*    content:"";
-    position: absolute;
-    top: 0;
-    bottom: -70%;	
-    left: -5px;
-    border-left:1px solid #ccc;
-    width: 150px;
-    min-height: 400px;
-    z-index: -1;*/
-}
-
-.first-row-padded {
-	display: block;
-	min-height: 200px;
-}
 
 
 ul.document-box {
@@ -692,6 +683,14 @@ ul.document-box {
 	}	
 }
 
+.mappina_titolo{
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	z-index: 100;
+	width: 150px;
+	border: 0px solid #CCC;
+}
 
 
 /*

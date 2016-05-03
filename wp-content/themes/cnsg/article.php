@@ -8,14 +8,12 @@
             <p class="key-keywords"><b>Keywords</b><br ><?php the_tags(""); ?></p>
         </div>
 
-
         <div class="columns medium-9">
         <p class="categoria"><?php echo the_category( ); ?></p>
         <p class="titolo big"><?php the_title(); ?></p>
         <p class="data"><?php the_date( ); ?></p>
             <?php the_content( ); ?>        
         </div>
-
 
     </div> <!-- end row -->
 </article>

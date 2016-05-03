@@ -10,12 +10,10 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flaticon.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app_override.css">
-
-
-    
-    
-     <script src=<?php bloginfo('template_directory'); ?>/scripts/vendor/modernizr.fbe20327.js></script>
-   <!--  <script src="<?php // bloginfo('template_directory'); ?>/js/vendor/modernizr.min.js"></script> -->
+     
+   <!--  
+    <script src=<?php //bloginfo('template_directory'); ?>/scripts/vendor/modernizr.fbe20327.js></script>
+   -->
 
     <?php wp_head(); ?>
 
@@ -77,15 +75,6 @@
 
 
 
-
-
-
-
-
-
-  
-        
-    
         <div class="menutop"><!-- menutop -->
 
 
@@ -109,8 +98,6 @@
                     </ul>
                 </div>
             
-
-
                 <!-- Lato sinistro social lingua -->
                 <div class="columns medium-4 show-for-medium-up">            
                     <div class="right">
