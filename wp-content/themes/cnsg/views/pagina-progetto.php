@@ -73,17 +73,7 @@ $rl_category_color = $categoria['colore'];
   <div class="columns large-7 large-push-0 medium-12"><h1><?php the_title(); ?></h1></div>
 
   <div class="columns large-3 large-push-0 medium-12">
-
-
-
-      <h5><b>Project Main Area:</b><br /><?php echo get_field('aree_del_progetto'); ?></h5>
-      <h5><b>Timeline: </b><br />
-      <?php echo $data_inizio_proj->format('M Y'); ?> - <?php echo $data_fine_proj->format('M Y'); ?>
-      </h5>      
-      <h5><b>Geographic Regions: </b><br /><?php echo $aree_p//echo get_field('regioni_geografiche'); ?></h5>
-      <h5><b>Keywords: </b></h5>
-
-      <?php //echo $categories[0]->name; ?>
+      
   </div>
 </div>
 
@@ -102,7 +92,7 @@ $rl_category_color = $categoria['colore'];
 
 
 
-<div class="columns large-7 large-push-2 medium-12 main-proj-column">
+<div class="columns large-8 large-push-2 medium-12 main-proj-column">
   <h3 class="proj_main_goal"><?php echo get_field('main_goal',$post->ID); ?></h3>
   
 
@@ -125,10 +115,10 @@ $rl_category_color = $categoria['colore'];
 
 
 
-    <div class="columns large-2 large-pull-7 medium-4">
+    <div class="columns large-2 large-pull-8 medium-4">
 
-
-
+  
+  
         
         <h2>Coordinators</h2>        
         <ul class="staff-list">
@@ -185,13 +175,28 @@ $rl_category_color = $categoria['colore'];
 -->
 
 
-  <div class="columns large-3 medium-8">
+  <div class="columns large-2 medium-8">
+        <h2 >Info</h2>
+        <h5><b>Project Main Area:</b><br /><?php echo get_field('aree_del_progetto'); ?></h5>
+      <h5><b>Timeline: </b><br />
+      <?php echo $data_inizio_proj->format('M Y'); ?> - <?php echo $data_fine_proj->format('M Y'); ?>
+      </h5>      
+      <h5><b>Geographic Regions: </b><br /><?php echo $aree_p//echo get_field('regioni_geografiche'); ?></h5>
+      <h5><b>Keywords: </b></h5>
 
 
-    <?php ?>
+
 
   
-          <!-- Colonna Pubblicazioni -->
+</div>     
+
+ <!-- row End    -->
+</div>
+
+
+<div class="row">
+  
+            <!-- Colonna Pubblicazioni -->
           <?php if (!empty($pubblicazioni)): ?>                     
             <h2 >Publications</h2>
             <?php  
@@ -199,7 +204,7 @@ $rl_category_color = $categoria['colore'];
               get_template_part( 'views/doc-template', get_post_format() ); 
             ?>               
           <?php endif; ?>
-          
+
           <!-- Colonna Documenti -->
           <?php if (!empty($documenti)): ?>                     
             <h2 >Documents</h2>
@@ -207,14 +212,9 @@ $rl_category_color = $categoria['colore'];
               set_query_var( 'docs', $documenti );
               get_template_part( 'views/doc-template', get_post_format() ); 
             ?>               
-          <?php endif; ?>       
-             
-
-
-
-    </div>     
-
- <!-- row End    -->
+          <?php endif; ?>     
 </div>
+
+
 
 </article>

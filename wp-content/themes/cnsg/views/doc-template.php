@@ -30,7 +30,7 @@ www.andreafiorelli.com
 
 		?>
 
-
+		<div class="columns large-3">
 		<li>
 		<p class="doc-autori"><?php echo $autori; ?></p>
 		<p class="doc-titolo"><?php echo $pubb->post_title; ?></p>
@@ -44,6 +44,7 @@ www.andreafiorelli.com
 		<a data-open = "pub<?php echo $pubb->ID; ?>">abstract</a>
 
 		</li>
+		</div>
 
 <?php endforeach; ?>
 
