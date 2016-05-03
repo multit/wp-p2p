@@ -67,7 +67,7 @@ $rl_category_color = $categoria['colore'];
 <div class="row">
   <div class="columns large-2 large-push-0 medium-12"><?php 
             set_query_var( 'rl_category_color', $rl_category_color );
-            get_template_part( 'share-template', get_post_format() );  
+            get_template_part( 'views/share-template', get_post_format() );  
             ?>
   </div>
   <div class="columns large-7 large-push-0 medium-12"><h1><?php the_title(); ?></h1></div>
@@ -185,58 +185,32 @@ $rl_category_color = $categoria['colore'];
 -->
 
 
-  <div class="columns large-3 medium-8">       
+  <div class="columns large-3 medium-8">
+
+
+    <?php ?>
+
   
           <!-- Colonna Pubblicazioni -->
-          <?php if (!empty($pubblicazioni)): ?>            
-         
-          <h2 >Pubblicazioni</h2>
-          <ul class="document-box">
-              <?php foreach ($pubblicazioni as $pubb ) : 
-                  $file = get_field('file',$pubb->ID); 
-                  $autori =  get_field('doc-autori',$pubb->ID);
-                  $abstract =  get_field('doc-abstract',$pubb->ID);
-                  $web_url = get_field('file_url',$pubb->ID);
-                  $download_url = $file['url'];
-                  ?>
-                  <li>
-                    <p class="doc-autori"><?php echo $autori; ?></p>
-                    <p class="doc-titolo"><?php echo $pubb->post_title; ?></p>
-                    
+          <?php if (!empty($pubblicazioni)): ?>                     
+            <h2 >Publications</h2>
+            <?php  
+              set_query_var( 'docs', $pubblicazioni );
+              get_template_part( 'views/doc-template', get_post_format() ); 
+            ?>               
+          <?php endif; ?>
+          
+          <!-- Colonna Documenti -->
+          <?php if (!empty($documenti)): ?>                     
+            <h2 >Documents</h2>
+            <?php  
+              set_query_var( 'docs', $documenti );
+              get_template_part( 'views/doc-template', get_post_format() ); 
+            ?>               
+          <?php endif; ?>       
+             
 
-                    <div class="reveal" id="pub<?php echo $pubb->ID; ?>" data-reveal>
-                      Abstract:<?php echo $abstract; ?>
-                    </div>
-                    <a data-open = "pub<?php echo $pubb->ID; ?>">abstract</a>
 
-                  </li>
-              <?php endforeach; ?>                
-          </ul>
-
-         <?php endif; ?>       
-
-          <!-- Colonna Docuemnti -->
-          <ul class="document-box">
-              <?php foreach ($documenti as $doc ) : 
-                  $file = get_field('file',$doc->ID); 
-                  $autori =  get_field('doc-autori',$doc->ID);
-                  $abstract =  get_field('doc-abstract',$doc->ID);
-                  $web_url = get_field('file_url',$doc->ID);
-                  $download_url = $file['url'];
-                  ?>
-                  <li>
-                    <p class="doc-autori"><?php echo $autori; ?></p>
-                    <p class="doc-titolo"><?php echo $doc->post_title; ?></p>
-                    
-
-                    <div class="reveal" id="pub<?php echo $doc->ID; ?>" data-reveal>
-                      Abstract:<?php echo $abstract; ?>
-                    </div>
-                    <a data-open = "pub<?php echo $doc->ID; ?>">abstract</a>
-
-                  </li>
-              <?php endforeach; ?>                
-          </ul>
 
     </div>     
 
