@@ -8,6 +8,18 @@
 
 
 
+      <?php   
+      $categorie_progetto = get_terms('projects');
+      foreach ($categorie_progetto as $cat) { 
+        $term_link = get_term_link( $cat);
+        ?>
+          <h5><a href="<?php echo $term_link ?>"><?php echo $cat->name; ?></a></5>
+      <?php } 
+      ?>
+
+
+
+   
 
 
 <section id="hp-slider">
@@ -93,13 +105,9 @@
     </div>
 
 
-
-
-
   </div>
 </section>
     
-
 
 
 <section id="mission">

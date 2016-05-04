@@ -221,6 +221,7 @@ function registra_categorie_dei_progetti() {
     'show_in_menu'    => true,
     'show_admin_column'     => false
   );
+  // ATTENZIONE eliminata la tass projects per le news
   register_taxonomy( 'projects', array('post','progetto'), $args );
 
   // keywords

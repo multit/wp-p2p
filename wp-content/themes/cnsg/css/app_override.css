@@ -31,13 +31,13 @@ body.login { background-color: #F4F4ED; }
 
 .paragrafo-stretto { font-size: 0.8em; line-height: 0.8em; }
 
-h1, h2, h3, ul.document-box li p.doc-autori, ul.document-box li a, h4, h5, h6 { color: #4d4d2f; }
+h1, h2, h3, ul.document-box li p.doc-autori, ul.document-box li a, div.menutop ul li a, h4, h5, h6 { color: #4d4d2f; }
 
 h1 { font-family: "Roboto-Slab-regular"; font-size: 2.5em; line-height: 1.1em; letter-spacing: -0.02em; padding: 0 0 30px 0; }
 
 h2 { font-family: "Roboto-Slab-regular"; font-size: 1.3em; line-height: 1em; padding: 0 0 10px 0; }
 
-h3, ul.document-box li p.doc-autori, ul.document-box li a { font-family: "Montserrat-regular"; text-transform: uppercase; font-size: 0.8em; letter-spacing: 0.1em; line-height: 1.2em; }
+h3, ul.document-box li p.doc-autori, ul.document-box li a, div.menutop ul li a { font-family: "Montserrat-regular"; text-transform: uppercase; font-size: 0.8em; letter-spacing: 0.1em; line-height: 1.2em; }
 
 h4 { font-family: "Roboto-Slab-regular"; font-size: 1.1em; line-height: 1.1em; letter-spacing: -0.02em; }
 
@@ -236,7 +236,7 @@ div.colored-box:first-child { height: 10px; width: 50%; margin: 0 0 0 0; }
 ul.staff-list li { text-align: left; margin: 0; padding: 0; }
 ul.staff-list li a, ul.staff-list li a:visited { color: #000000; }
 
-h3.excerpt, ul.document-box li p.excerpt.doc-autori, ul.document-box li a.excerpt, h3.proj_main_goal, ul.document-box li p.proj_main_goal.doc-autori, ul.document-box li a.proj_main_goal { color: #666; font-size: 0.8em; line-height: 1.5em; padding: 8px 0 20px; }
+h3.excerpt, ul.document-box li p.excerpt.doc-autori, ul.document-box li a.excerpt, div.menutop ul li a.excerpt, h3.proj_main_goal, ul.document-box li p.proj_main_goal.doc-autori, ul.document-box li a.proj_main_goal, div.menutop ul li a.proj_main_goal { color: #666; font-size: 0.8em; line-height: 1.5em; padding: 8px 0 20px; }
 
 .staff-mini-image { width: 70px; height: 70px; border-radius: 50%; margin: 0 0 5px 0; }
 
@@ -304,24 +304,21 @@ div.section-title:after { content: ""; position: absolute; top: 50%; left: 60%; 
 ##    ## ##     ##    ###    ####  ######   ##     ## ######## ####  #######  ##    ## ########       ##     #######  ##        
 
 */
-nav.menutop { /*width: 100%;
-background-color: #FFFFFF;*/ }
+div.menutop { position: fixed; z-index: 101; top: 0; left: 0; background-color: #F4F4ED; height: 67px; width: 100%; padding: 20px 10px 0 10px; margin: 0px; overflow: hidden; }
 
-div.menutop { position: fixed; z-index: 150; top: 0; left: 0; background-color: #F4F4ED; height: 67px; width: 100%; padding: 0 10px 0 10px; margin: 0px; overflow: hidden; }
+div.menutop ul li { padding: 0 10px 10px 20px; margin: 0px; }
 
-div.menutop ul { position: relative; }
-
-div.menutop ul li { height: 67px; padding: 20px 20px 10px 20px; margin: 0px; }
-
-div.menutop ul li:first-child { padding-left: 0px; }
+div.menutop ul li a { padding-left: 10px; }
 
 div.menutop ul#scelta_lingua li:last-child:before { content: ""; position: absolute; top: 30%; bottom: 30%; left: 50%; border-left: 1px solid #ccc; width: 150px; }
 
-ul#social { margin: 0 180px 0 0; overflow: visible; }
+span.fa-stack.fa-lg { font-size: 1.1em; }
 
-ul#social li { color: #6F6F6E; margin: -6px -30px 0 0; }
+ul#social { margin: 0 180px 0 0; overflow: visible; font-size: 10px; }
 
-ul#social li h3, ul#social ul.document-box li p.doc-autori, ul.document-box ul#social li p.doc-autori, ul#social ul.document-box li a, ul.document-box ul#social li a { color: #6F6F6E; }
+ul#social li { color: #6F6F6E; margin: -6px -26px 0 0; }
+
+ul#social li h3, ul#social ul.document-box li p.doc-autori, ul.document-box ul#social li p.doc-autori, ul#social ul.document-box li a, ul.document-box ul#social li a, div.menutop ul#social li a { color: #6F6F6E; }
 
 /*Secondo Menu  ######  ########  ######   #######  ##    ## ########   #######     ##     ## ######## ##    ## ##     ##    
 ##    ## ##       ##    ## ##     ## ###   ## ##     ## ##     ##    ###   ### ##       ###   ## ##     ##    
@@ -335,9 +332,9 @@ div.menudue { /*display: none;*/ position: fixed; z-index: 151; top: -67px; left
 
 .menudue-logo { text-align: center; }
 
-.menudue-logo h3#logosx, .menudue-logo ul.document-box li p#logosx.doc-autori, ul.document-box li .menudue-logo p#logosx.doc-autori, .menudue-logo ul.document-box li a#logosx, ul.document-box li .menudue-logo a#logosx { display: inline; margin-right: 60px; }
+.menudue-logo h3#logosx, .menudue-logo ul.document-box li p#logosx.doc-autori, ul.document-box li .menudue-logo p#logosx.doc-autori, .menudue-logo ul.document-box li a#logosx, ul.document-box li .menudue-logo a#logosx, .menudue-logo div.menutop ul li a#logosx, div.menutop ul li .menudue-logo a#logosx { display: inline; margin-right: 60px; }
 
-.menudue-logo h3#logodx, .menudue-logo ul.document-box li p#logodx.doc-autori, ul.document-box li .menudue-logo p#logodx.doc-autori, .menudue-logo ul.document-box li a#logodx, ul.document-box li .menudue-logo a#logodx { display: inline; }
+.menudue-logo h3#logodx, .menudue-logo ul.document-box li p#logodx.doc-autori, ul.document-box li .menudue-logo p#logodx.doc-autori, .menudue-logo ul.document-box li a#logodx, ul.document-box li .menudue-logo a#logodx, .menudue-logo div.menutop ul li a#logodx, div.menutop ul li .menudue-logo a#logodx { display: inline; }
 
 /*Mappona fullscreen progetti
 
@@ -350,7 +347,7 @@ div.menudue { /*display: none;*/ position: fixed; z-index: 151; top: -67px; left
 ##     ## ######## ##    ##  #######     ##        #######  ######## ########  ######   ######  ##     ## ######## ######## ##    ## 
 
 */
-div#fullscreen-mega-map { background-color: #f0f0e7; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 102; padding: 50px 0 200px 0; margin-top: -33px; }
+div#fullscreen-mega-map { background-color: #f0f0e7; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 9999; padding: 50px 0 200px 0; margin-top: -33px; }
 
 .fullscreen-mega-map-inactive { opacity: 0; display: none; }
 
@@ -391,7 +388,7 @@ i.fa-times { position: absolute; top: -10px; left: 100%; color: #8c8c56; font-si
 
 aside.left-off-canvas-menu { padding-top: 120px; background: #333333 url("../images/cnsg.logo.white.png") no-repeat 50% 40px; background-size: 40px; }
 
-ul.left-menu-mobile li a h3, ul.left-menu-mobile ul.document-box li a p.doc-autori, ul.document-box ul.left-menu-mobile li a p.doc-autori, ul.left-menu-mobile ul.document-box li a a, ul.document-box ul.left-menu-mobile li a a, ul.left-submenu li a h3, ul.left-submenu ul.document-box li a p.doc-autori, ul.document-box ul.left-submenu li a p.doc-autori, ul.left-submenu ul.document-box li a a, ul.document-box ul.left-submenu li a a { color: #fff; display: inline; font-size: 0.7em; }
+ul.left-menu-mobile li a h3, ul.left-menu-mobile ul.document-box li a p.doc-autori, ul.document-box ul.left-menu-mobile li a p.doc-autori, ul.left-menu-mobile ul.document-box li a a, ul.document-box ul.left-menu-mobile li a a, div.menutop ul.left-menu-mobile li a a, ul.left-submenu li a h3, ul.left-submenu ul.document-box li a p.doc-autori, ul.document-box ul.left-submenu li a p.doc-autori, ul.left-submenu ul.document-box li a a, ul.document-box ul.left-submenu li a a, div.menutop ul.left-submenu li a a { color: #fff; display: inline; font-size: 0.7em; }
 
 .left-submenu { height: 100%; }
 

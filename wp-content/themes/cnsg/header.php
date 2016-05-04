@@ -79,50 +79,10 @@
 
 
 
-            <div class="row">   
+            <div class="row hp-menu-top-butta">   
 
-                <!-- Solo per mobile è il menu principale -->
-                <div class="columns small-12 show-for-small-only">
-                  <h3 class="random_colored">Italian Center for Global Health<i class="fa fa-bars"></i></h3>
-                </div>
-
-
-                <div class="columns medium-8 show-for-medium-up">
-                    <ul class="inline-list">
-                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#mission"><h3>Mission</h3></a></li>                        
-                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#staff"><h3>Staff</h3></a></li>
-                        <li class="menu-btn"><a href="#" id="menutop_projects" class="fullscreen-map-toggler menuAnimated"><h3>Projects&nbsp;<i id="menuarrow"class="fa fa-chevron-down" style="display:inline"></i></h3></a></li>
-                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#news"><h3>News</h3></a></li>
-                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#maps"><h3>Maps</h3></a></li>
-                        <li class="menu-btn"><a href="" class="menuAnimated"><h3>Search</h3></a></li>
-                    </ul>
-                </div>
-            
-                <!-- Lato sinistro social lingua -->
-                <div class="columns medium-4 show-for-medium-up">            
-                    <div class="right">
-                        <ul id="social" class="inline-list" style="display:none" >
-                        <li><h3>
-                          <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></li></span>
-                        </h3>
-                        <li><h3>
-                          <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></li></span>
-                        </h3>
-                        <li><h3>
-                          <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss fa-stack-1x fa-inverse"></i></li></span>
-                        </h3>
-                        </ul>
-
-                        <ul class="inline-list" id="scelta_lingua">
-                            <li><a href=""><h3>ITA</h3></a></li>
-                            <li><a href=""><h3>EN</h3></a></li>
-                        </ul>  
-                    </div>
-                </div>
-
-
-
-
+                <?php get_template_part( 'inc/hp-menu-top' ); ?>
+                
 
             </div>
     
