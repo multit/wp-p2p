@@ -682,14 +682,45 @@ ul.document-box {
 		}
 	}	
 }
-
-.mappina_titolo{
+.mappina_progetto {
+	margin:  0 0 50px 0;
+}
+.datamaps-legend {
 	position: absolute;
 	bottom: 15px;
 	left: 0;
-	z-index: 100;
-	width: 150px;
-	border: 0px solid #CCC;
+	z-index: 100;	
+	dl dt {
+			font-family: $font-principale;
+		    font-size: 0.9em;
+    		line-height: 1.2em;
+    		font-weight: 300;
+    		float: none;
+    		display: block;
+		    margin-bottom: 6px;
+	}
+	dd {
+			width: 10px;
+		    margin-right: 6px;
+		    border-radius: 0px;
+	}
+}
+
+
+.mappina_legend {
+	background-color: #fff;
+	padding: 5px;
+	font-family: $font-principale;
+}
+
+.mappina_zoom {
+	@extend .datamaps-legend ;
+	left: 92%;
+	top:0;
+		i {
+			margin-right: 2px;
+			color: #464346;
+		}
 }
 
 

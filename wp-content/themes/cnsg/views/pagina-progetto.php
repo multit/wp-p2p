@@ -51,6 +51,11 @@ $aree_proj = explode(",", $aree_p);
 //Colore e icone di categoria vedi functions.php
 $categoria = get_dettagli_categoria( $post->ID );
 $rl_category_color = $categoria['colore'];  
+$categorie_progetto = $categoria['categorie'];
+$icona_cat_progetto = $categoria['icona_categoria'];
+
+// Keywords
+$keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 
 
 ?>
@@ -96,10 +101,20 @@ $rl_category_color = $categoria['colore'];
   <h3 class="proj_main_goal"><?php echo get_field('main_goal',$post->ID); ?></h3>
   
 
+
+<h2>Project Geographical Areas</h2>
  <div id="mappina" class="mappina_progetto"></div> 
+ <div class="mappina_zoom">
+   <a href="" class="zoom-button" data-zoom="reset"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
+  <a href="" class="zoom-button" data-zoom="in"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+   <a href="" class="zoom-button" data-zoom="out"><i class="fa fa-minus" aria-hidden="true"></i></a>
+ </div>
+
   <?php echo killer_datamap("mappina", $aree_proj, $rl_category_color ); ?>
-  <div class="mappina_titolo"><h5><b>Project Intervention Areas</b></h5></div>   
-            <?php the_content( ); ?>
+  
+
+  <?php the_content( ); ?>
+
 </div>
 
 
@@ -131,6 +146,7 @@ $rl_category_color = $categoria['colore'];
                   $thumb = get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
                   if ( $thumb == "" ) {
                     echo '<img src="https://pbs.twimg.com/profile_images/682452187545337856/Znwroimx.jpg" alt="" class="staff-mini-image" />';
+                    //echo '<i style="font-size:2em;" class="fa fa-user" aria-hidden="true"></i>';
                   } else {
                     echo $thumb;
                   }
@@ -181,8 +197,40 @@ $rl_category_color = $categoria['colore'];
       <h5><b>Timeline: </b><br />
       <?php echo $data_inizio_proj->format('M Y'); ?> - <?php echo $data_fine_proj->format('M Y'); ?>
       </h5>      
-      <h5><b>Geographic Regions: </b><br /><?php echo $aree_p//echo get_field('regioni_geografiche'); ?></h5>
-      <h5><b>Keywords: </b></h5>
+      
+      <h5><b>Categories:<br /></b>
+      <?php 
+      foreach ($categorie_progetto as $cat) { 
+      $term_link = get_term_link( $cat->term_id,'projects');
+        ?>
+          <h5><a href="<?php echo $term_link ?>"><?php echo $cat->name; ?></a></5>
+      <?php }
+       ?>
+
+      </h5>
+
+      <h5><b>Keywords:</b><br />
+        <?php  
+
+        if ( ! empty( $keywords ) && ! is_wp_error( $keywords ) ) {
+            $count = count( $keywords );
+            $i = 0;
+            $keywords_list = '<span>';
+            foreach ( $keywords as $keyword ) {
+                $i++;
+                $keywords_list .= '<a href="' . esc_url( get_term_link( $keyword ) ) . '" alt="' . esc_attr( sprintf( __( 'View all post filed under %s', 'my_localization_domain' ), $keyword->name ) ) . '">' . $keyword->name . '</a>';
+                if ( $count != $i ) {
+                    $keywords_list .= ' &middot; ';
+                }
+                else {
+                    $keywords_list .= '</span>';
+                }
+            }
+            echo $keywords_list;
+        }
+
+        ?>
+      </h5>
 
 
 
