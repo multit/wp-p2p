@@ -66,9 +66,6 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 <article>
 
 
-
-
-
 <div class="row">
   <div class="columns large-2 large-push-0 medium-12"><?php 
             set_query_var( 'rl_category_color', $rl_category_color );

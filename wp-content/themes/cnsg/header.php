@@ -91,19 +91,11 @@
 
 
 
-        <div class="menudue"><div class="row"><!-- menudue -->
-
-            <div class="columns small-1"><i class="fa fa-bars fullscreen-map-toggler"></i></div>
-            <div class="columns small-10 small-centered menudue-logo text-center">
-               <a href="."> <h3 id="logosx">centro nazionale salute globale</h3>
-                   <h3 id="logodx">italian center for global health</h3>  </a>
-            </div>
-
-            <div class="columns small-1">
-                <div id="menudue-logo-iss" class="iss-logo"></div>
-            </div>
-
-        </div></div> <!-- end menudue -->
+    <?php  
+            // Menu Revolving
+            set_query_var( 'post', $post );
+            get_template_part( 'views/revolving-menu', get_post_format() ); 
+     ?>      
 
 
 

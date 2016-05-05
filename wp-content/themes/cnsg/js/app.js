@@ -246,23 +246,33 @@ $('.info-expander').click(function(event) {
                 return percentuale;
             };
 
+            var revolvingMenuHeight = -($('div.revolving-menu').height());
+            $('div.revolving-menu').css({
+              top: revolvingMenuHeight,
+              //height: $(this).height();
+            });
+
             $(window).scrollspy({ 
                  min: 0 ,
                  max: scrollspy_max,
 
                  onEnter: function(element, position) {
-                    TweenMax.to('div.menudue',0.8,{ 'top': -67 });
+                    var menuHeight = -($('div.revolving-menu').height());
+                    //var menuHeight = -67;
+                    console.log(menuHeight);
+                    TweenMax.to('div.revolving-menu',0.8,{ 'top': menuHeight });
                     TweenMax.to('div#logo-area',0.8,{ 'top': 67 });
                  },
                  onLeave: function(element, position) {
                    
+                   TweenMax.to('div.revolving-menu',0.8,{ 'top': 0 });
+
                     $('div.logo_large.animated').css({ 'padding-top':endVal.pt, 'background-size':endVal.hb, 'margin-top':endVal.mt });
                     $('#logo-spacer.animated').css({'height': endVal.bm});
                     $('#menutop-logo.animated').css({
                       width: endVal.issW,
                       height: endVal.issW
-                    });
-                    TweenMax.to('div.menudue',0.8,{ 'top': 0 });
+                    });                    
                     TweenMax.to('div#logo-area',0.8,{ 'top': -200 });
 
                  },
@@ -276,9 +286,6 @@ $('.info-expander').click(function(event) {
 
                     TweenMax.to('div.logo_large.animated',0.4,{ 'padding-top':ptdiff_abs, 'background-size':bgdiff_abs, 'margin-top':mtdiff_abs });
                     TweenMax.to('#logo-spacer.animated',0.8,{'height': bmdiff_abs });
-
-                    // $('div.logo_large.animated').css({ 'padding-top':ptdiff_abs, 'background-size':bgdiff_abs, 'margin-top':mtdiff_abs });
-                    // $('#logo-spacer.animated').css({'height': bmdiff_abs });
 
                     var issWdiff_abs =  beginVal.issW - calcola_percent( beginVal.issW,endVal.issW,perc ).toFixed(0);
                     var issHdiff_abs =  beginVal.issH - calcola_percent( beginVal.issH,endVal.issH,perc ).toFixed(0);
