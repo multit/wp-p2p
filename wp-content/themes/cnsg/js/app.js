@@ -159,6 +159,9 @@ $('.info-expander').click(function(event) {
       });      
 
       function toggleFullscreenMap() {
+
+        //var scrollNow = $(window).scrollTop();
+        //$('#fullscreen-mega-map').css('top', scrollNow );
         TweenMax.to( $(".fullscreen-mega-map-active"), 0.6, { css:{className:"fullscreen-mega-map-inactive"} });    
         TweenMax.to( $(".fullscreen-mega-map-inactive"), 0.2, { css:{className:"fullscreen-mega-map-active"} });    
         // // Se non è visibile
@@ -177,9 +180,9 @@ $('.info-expander').click(function(event) {
         //     $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
         //   }    
       };
+
       // Chiude la mappa fullscreen cliccandoci sopra ma i link continuano a funzionare
       $('#fullscreen-mega-map').click(function(event) {        
-          //event.preventDefault();
           toggleFullscreenMap();         
       });   
 

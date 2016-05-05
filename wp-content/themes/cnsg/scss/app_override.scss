@@ -815,7 +815,7 @@ div.revolving-menu {
 	min-height: 67px;
 	left: 0;
 	width: 100%;	
-    background: $colore-grigio-fondo url('../images/cnsg-minilogo.png') no-repeat 50% 50%;
+    background: $colore-grigio-fondo  no-repeat 50% 50%;    
     .content {
     	padding: 20px 0 20px 0;
     }
@@ -827,6 +827,9 @@ div.revolving-menu {
 }
 .revolving-menu-logo {
 	text-align: center;
+	background: $colore-grigio-fondo url('../images/logo40.exec01.svg') no-repeat 50% 50%;
+	-webkit-background-size: contain;
+	background-size: contain;	
 }
 
 .revolving-menu-logo h3#logosx {
@@ -851,14 +854,13 @@ div.revolving-menu {
 
 div#fullscreen-mega-map {
 	background-color: darken( $colore-grigio-fondo, 2% );
-	position: absolute;
-	top:0px;
+	position: fixed;
+	top:67px;
 	left: 0px;
 	height: 100%;
 	width: 100%;
 	z-index: 9999;
 	padding: 100px 0 200px 0;
-	margin-top: -33px;
 }
 
 .fullscreen-mega-map-container {

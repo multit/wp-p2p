@@ -35,7 +35,7 @@
         <div class="row">
 
         <?php     
-            get_template_part( 'fullscreen-mega-map', get_post_format() );     
+            get_template_part( 'views/fullscreen-mega-map', get_post_format() );     
         ?>
 
     </div></div>
