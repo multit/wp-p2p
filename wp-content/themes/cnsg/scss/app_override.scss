@@ -51,8 +51,6 @@ $font-secondaria: 'Montserrat-regular';
 }
 
 
-
-
 body, ul ,li  {
 	font-family: $font-principale;
 	font-size: 15px;
@@ -103,13 +101,11 @@ h4 {
 	line-height: 1.1em;
 	letter-spacing: -0.02em;
 }
-
 h5 {
 	font-family: $font-principale;
 	font-size: 0.9em;
 	line-height: 1.4em;
 }
-
 h6 {
 	font-family: $font-principale;
 	font-size: 0.8em;
@@ -579,6 +575,10 @@ article {
 	min-height: 800px;	
 }
 
+h2.section-head {
+    margin-top: 40px;
+}
+
 .main-proj-column {
 	border-right:1px solid #ccc;
 }
@@ -610,6 +610,10 @@ ul.staff-list li {
 
 	 a, a:visited {
 	 	color: #000000	;
+	 }
+	 h5 {
+	 	font-family: $font-principale-bold;
+	 	line-height: 1.2em;	 	
 	 }
 }
 
@@ -666,9 +670,10 @@ b.attach_size {
 
 
 
-ul.document-box {
-	li {
+ul.document-box, div.document-box {
+
 		margin-bottom: 20px;
+
 		p.doc-autori, a {
 			@extend h3;
 			line-height: 1.3em;
@@ -682,7 +687,7 @@ ul.document-box {
 		div.doc-abstract {
 			display:none;
 		}
-	}	
+
 }
 .mappina_progetto {
 	margin:  0 0 50px 0;
@@ -1111,5 +1116,4 @@ div.chart-label {
     line-height: 1em;
     margin: 5% 0 0 0;
 }
-
 

@@ -64,7 +64,7 @@ var app = (function(document, $) {
       });
 
 
-      // Colora titolini in maniera random
+      // Colora titolini in maniera random per singola lettera
       $( '.random_colored' ).each(function( index ) {            
             var message = $( this ).text();
             var lun_message = message.length;
@@ -74,12 +74,21 @@ var app = (function(document, $) {
 
             for (var i = 0; i < lun_message; i++) {
                 var randomnumber=Math.floor(Math.random()*lun_colors);              
-                newHtml += '<span style="color:' + colors[randomnumber] + ';">' + message[i] + '</span>';
-                // newHtml += '<span style=\'color:' + colors[i] + ';\'>' + message[i] + '</span>';
-                //i = ( i >= lun_colors ? 0 : i )
+                newHtml += '<span style="color:' + colors[randomnumber] + ';">' + message[i] + '</span>';              
             }
             $( this ).html(newHtml) ;
       });
+
+      // Colora titolini in maniera random (un solo colore random)
+      $( '.random_color' ).each(function( index ) {            
+            var message = $( this ).text();
+            var lun_message = message.length;
+            var colors = new Array('#88101D','#AC9865','#615931','#25545D','#C89B67','#AC502A','#008173','#735079','#8A8444','#956F3E');
+            var lun_colors = colors.length;
+            var randomnumber=Math.floor(Math.random()*lun_colors); 
+            $(this).css('color', colors[randomnumber]);            
+      });
+
 
 
 
@@ -121,6 +130,13 @@ $('.info-expander').click(function(event) {
         event.preventDefault();
         var tgt = $(this).attr('section');            
         $('html, body').animate({ scrollTop: $(tgt).offset().top - 300 }, 2000);
+      });
+      
+      $('.fast-scroller').click(function(event) {
+        /* Act on the event */
+        event.preventDefault();
+        var tgt = $(this).attr('section');            
+        $('html, body').animate({ scrollTop: $(tgt).offset().top - 300 }, 800);
       });
 
 

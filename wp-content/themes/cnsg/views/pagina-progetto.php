@@ -86,7 +86,7 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 <div class="row">
 
 <!--
-######   #######  ##        #######  ##    ## ##    ##    ###        ######  ######## ##    ## ######## ########     ###    ##       ######## 
+  ######   #######  ##        #######  ##    ## ##    ##    ###        ######  ######## ##    ## ######## ########     ###    ##       ######## 
 ##    ## ##     ## ##       ##     ## ###   ## ###   ##   ## ##      ##    ## ##       ###   ##    ##    ##     ##   ## ##   ##       ##       
 ##       ##     ## ##       ##     ## ####  ## ####  ##  ##   ##     ##       ##       ####  ##    ##    ##     ##  ##   ##  ##       ##       
 ##       ##     ## ##       ##     ## ## ## ## ## ## ## ##     ##    ##       ######   ## ## ##    ##    ########  ##     ## ##       ######   
@@ -132,51 +132,57 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 
     <div class="columns large-2 large-pull-8 medium-4">
 
+
   
   
-        
-        <h2>Coordinators</h2>        
-        <ul class="staff-list">
-        
-        <?php foreach ( $coordinators as $person ) : ?>
-        
-            <li>
-                <?php 
-                  // echo get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
-                  $thumb = get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
-                  if ( $thumb == "" ) {
-                    echo '<img src="https://pbs.twimg.com/profile_images/682452187545337856/Znwroimx.jpg" alt="" class="staff-mini-image" />';
-                    //echo '<i style="font-size:2em;" class="fa fa-user" aria-hidden="true"></i>';
-                  } else {
-                    echo $thumb;
-                  }
-                ?>                
-                <a href="<?php echo get_permalink($person->ID); ?>">
-                  <h5 style="color:<?php echo $rl_category_color; ?>">
-                    <?php echo $person->post_title ?></h5>
-                  </a>                
-                <h5><?php echo get_field('ruolo',$person->ID); ?><br>
-                <a href="mailto:<?php echo get_field('email',$person->ID); ?>"><b><?php echo get_field('email',$person->ID); ?></b></a>
-                </h5>
-            </li>
-        <?php endforeach; ?>
+ <div style="display:block;">
+          
+           <h2>Coordinators</h2>        
+           <ul class="staff-list">
+           
+           <?php foreach ( $coordinators as $person ) : ?>
+           
+               <li>
+                <div class="columns small-centered">
 
-        </ul>
+                   <?php 
+                     $thumb = get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
+                     if ( $thumb == "" ) {
+                       echo '<img src="https://pbs.twimg.com/profile_images/682452187545337856/Znwroimx.jpg" alt="" class="staff-mini-image" />';
+                       //echo '<i style="font-size:2em;" class="fa fa-user" aria-hidden="true"></i>';
+                     } else {
+                       echo $thumb;
+                     }
+                   ?>                
+                   <a href="<?php echo get_permalink($person->ID); ?>">
+                     <h5>
+                       <?php echo $person->post_title ?></h5>
+                     </a>                
+                   <h5><?php echo get_field('ruolo',$person->ID); ?><br>
+                   <a href="mailto:<?php echo get_field('email',$person->ID); ?>"><b><?php echo get_field('email',$person->ID); ?></b></a>
+                   </h5>
+                   </div>
+               </li>
+           <?php endforeach; ?>
+   
+           </ul>
+   
+           
+           <h2>Staff</h2>
+           <ul class="staff-list">
+           
+           <?php foreach ( $staff_members as $person ) : ?>
+           
+               <li>    
+                   <a href="<?php echo get_permalink($person->ID); ?>">
+                     <h5>
+                       <?php echo $person->post_title ?></h5></a>              
+               </li>
+           <?php endforeach; ?>
+   
+           </ul>
+ </div>
 
-        
-        <h2>Project Staff</h2>
-        <ul class="staff-list">
-        
-        <?php foreach ( $staff_members as $person ) : ?>
-        
-            <li>    
-                <a href="<?php echo get_permalink($person->ID); ?>">
-                  <h5 style="color:<?php echo $rl_category_color; ?>">
-                    <?php echo $person->post_title ?></h5></a>              
-            </li>
-        <?php endforeach; ?>
-
-        </ul>
 
 </div>
 
@@ -232,7 +238,8 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
         ?>
       </h5>
 
-
+<h5><a href="#pubblicazioni" class="fast-scroller" section="#pubblicazioni" ><i class="fa fa-files-o" aria-hidden="true"></i>&nbsp;&nbsp;<b>Publications</b></a></h5>
+<h5><a href="#documenti" class="fast-scroller" section="#documenti"><i class="fa fa-files-o" aria-hidden="true"></i>&nbsp;&nbsp;<b>Docs</b></a></h5>
 
 
   
@@ -242,26 +249,81 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 </div>
 
 
-<div class="row">
-  
+<div class="row" id="staff" style="display:none;">
+  <div class="columns large-10 large-offset-2 end">  
+   <h2 class="section-head">Coordinators</h2>        
+        <ul class="staff-list">
+        
+        <?php foreach ( $coordinators as $person ) : ?>
+        
+         <?php 
+                  // echo get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
+                  $thumb = get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); 
+                  if ( $thumb == "" ) {
+                    echo '<img src="https://pbs.twimg.com/profile_images/682452187545337856/Znwroimx.jpg" alt="" class="staff-mini-image" />';
+                    //echo '<i style="font-size:2em;" class="fa fa-user" aria-hidden="true"></i>';
+                  } else {
+                    echo $thumb;
+                  }
+                ?>                
+                <a href="<?php echo get_permalink($person->ID); ?>">
+                  <h5 style="color:<?php echo $rl_category_color; ?>">
+                    <?php echo $person->post_title ?></h5>
+                  </a>                
+                <h5><?php echo get_field('ruolo',$person->ID); ?><br>
+                <a href="mailto:<?php echo get_field('email',$person->ID); ?>"><b><?php echo get_field('email',$person->ID); ?></b></a>
+                </h5>
+            
+        <?php endforeach; ?>
+
+        </ul>
+</div></div>
+
+
+<div class="row" id="staff" style="display:none;">
+  <div class="columns large-10 large-offset-2 end">  
+
+        <h2 class="section-head">Project Staff</h2>
+        <ul class="staff-list">
+        
+        <?php foreach ( $staff_members as $person ) : ?>
+        
+            <li>    
+                <a href="<?php echo get_permalink($person->ID); ?>">
+                  <h5 style="color:<?php echo $rl_category_color; ?>">
+                    <?php echo $person->post_title ?></h5></a>              
+            </li>
+        <?php endforeach; ?>
+
+        </ul>
+
+</div></div>
+
+
+<div class="row" id="pubblicazioni">
+    <div class="columns large-10 large-offset-2 end">        
             <!-- Colonna Pubblicazioni -->
           <?php if (!empty($pubblicazioni)): ?>                     
-            <h2 >Publications</h2>
+            <h2 class="section-head">Publications</h2>
             <?php  
               set_query_var( 'docs', $pubblicazioni );
               get_template_part( 'views/doc-template', get_post_format() ); 
             ?>               
-          <?php endif; ?>
+          <?php endif; ?>   
+</div></div>
 
+
+<div id="documenti" class="row">
+  <div class="columns large-10 large-push-2 end">
           <!-- Colonna Documenti -->
           <?php if (!empty($documenti)): ?>                     
-            <h2 >Documents</h2>
+            <h2 class="section-head">Documents</h2>
             <?php  
               set_query_var( 'docs', $documenti );
               get_template_part( 'views/doc-template', get_post_format() ); 
             ?>               
-          <?php endif; ?>     
-</div>
+          <?php endif; ?>  
+</div></div>
 
 
 

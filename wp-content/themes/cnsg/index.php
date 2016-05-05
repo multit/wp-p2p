@@ -8,20 +8,6 @@
 
 
 
-      <?php   
-      $categorie_progetto = get_terms('projects');
-      foreach ($categorie_progetto as $cat) { 
-        $term_link = get_term_link( $cat);
-        ?>
-          <h5><a href="<?php echo $term_link ?>"><?php echo $cat->name; ?></a></5>
-      <?php } 
-      ?>
-
-
-
-   
-
-
 <section id="hp-slider">
   <?php 
             $bigslides = get_post(251);
@@ -63,7 +49,7 @@
                     <!--  <div class="hp-news-bar" style="background-color:<?php echo $rl_category_color; ?>"></div> -->
                      <div class="hp-news-occhiello" style="color:<?php echo $rl_category_color; ?>;"><?php echo $nome_categoria ?></div>
                      <div class="hp-titolo-box"><a class="" href="<?php the_permalink(); ?>">
-                      <h2 style="color:<?php echo $rl_category_color; ?>;"><?php echo the_title(); ?></h1></a></div>
+                      <h2 class="random_color"><?php echo the_title(); ?></h1></a></div>
                      <div class="hp-news-dateinfo closed"><?php echo get_the_date(); ?>
                         <i class="fa fa-bars info-expander" id="" panel="info-panel-<?php the_ID(); ?>" ></i>
                         <div class="hp-news-info" id="info-panel-<?php the_ID(); ?>">

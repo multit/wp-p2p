@@ -11,20 +11,13 @@
       <div class="fullscreen-mega-map-container">
 
 
-  <?php  
-
-
-   $args = array (
-            'menu' => 'Menu Progetti',
-            'container' => false,
-            // 'link_before' => '<h3>',
-            // 'link_after' => '</h3>',
-            'menu_class' => 'medium-block-grid-3 large-block-grid-3'
-        );
-    wp_nav_menu($args);
-
-
-  ?>
-
+      <?php   
+      $categorie_progetto = get_terms('projects');
+      foreach ($categorie_progetto as $cat) { 
+        $term_link = get_term_link( $cat);
+        ?>
+          <h5><a href="<?php echo $term_link ?>"><?php echo $cat->name; ?></a></5>
+      <?php } 
+      ?>
 
         </div>
