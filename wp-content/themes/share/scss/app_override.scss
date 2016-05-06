@@ -1,0 +1,1166 @@
+/*
+
+Developed by:
+    ___       ___       ___       ___       ___       ___            ___       ___       ___       ___       ___       ___       ___       ___   
+   /\  \     /\__\     /\  \     /\  \     /\  \     /\  \          /\  \     /\  \     /\  \     /\  \     /\  \     /\__\     /\__\     /\  \  
+  /::\  \   /:| _|_   /::\  \   /::\  \   /::\  \   /::\  \        /::\  \   _\:\  \   /::\  \   /::\  \   /::\  \   /:/  /    /:/  /    _\:\  \ 
+ /::\:\__\ /::|/\__\ /:/\:\__\ /::\:\__\ /::\:\__\ /::\:\__\      /::\:\__\ /\/::\__\ /:/\:\__\ /::\:\__\ /::\:\__\ /:/__/    /:/__/    /\/::\__\
+ \/\::/  / \/|::/  / \:\/:/  / \;:::/  / \:\:\/  / \/\::/  /      \/\:\/__/ \::/\/__/ \:\/:/  / \;:::/  / \:\:\/  / \:\  \    \:\  \    \::/\/__/
+   /:/  /    |:/  /   \::/  /   |:\/__/   \:\/  /    /:/  /          \/__/   \:\__\    \::/  /   |:\/__/   \:\/  /   \:\__\    \:\__\    \:\__\  
+   \/__/     \/__/     \/__/     \|__|     \/__/     \/__/                    \/__/     \/__/     \|__|     \/__/     \/__/     \/__/     \/__/  
+
+www.andreafiorelli.com
+
+*/
+
+/*
+12 Colori set scuro
+colore:#9e8b24
+colore:#8a8444
+colore:#956f3e
+colore:#a8a200
+colore:#88101d
+colore:#ac502a
+colore:#735079
+colore:#008173
+colore:#735079
+colore:#25545d
+colore:#956f3e
+colore:#008173
+*/
+
+
+$colore-grigio-fondo: #F4F4ED;
+
+$font-principale: 'Roboto-Slab-light';
+$font-principale-bold: 'Roboto-Slab-regular';
+$font-secondaria: 'Montserrat-regular';
+
+@font-face {
+    font-family: 'Roboto-Slab-regular';
+    src: url("../fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto-Slab-light';
+    src: url("../fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url("../fonts/montserrat/Montserrat-Regular.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'Share-regular';
+    src: url("../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'Share-regular';
+    src: url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.eot');
+    src: url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.woff') format('woff'),
+         url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.ttf') format('truetype'),
+         url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.svg#share-regularosfregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body, ul ,li  {
+	font-family: $font-principale;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+body {
+	margin: 100px 0 0 0;
+	padding: 0px;
+}
+
+body.login {
+	background-color: $colore-grigio-fondo;
+}
+
+.paragrafo-stretto {
+	font-size: 0.8em;
+	line-height: 0.8em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   color: darken( $colore-grigio-fondo, 70% );}
+
+h1 {
+	font-family: $font-principale-bold;
+	font-size: 2.5em;
+	line-height: 1.1em;
+	letter-spacing: -0.02em;
+	padding:0 0 30px 0;
+}
+h2 {
+    font-family: $font-principale-bold;
+    font-size: 1.3em;
+    line-height: 1em;
+    padding: 0 0 10px 0;
+}
+
+h3 {
+	font-family: $font-secondaria;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	letter-spacing: 0.1em;
+	line-height: 1.2em;
+}
+h4 {
+	font-family: $font-principale-bold;
+	font-size: 1.1em;
+	line-height: 1.1em;
+	letter-spacing: -0.02em;
+}
+h5 {
+	font-family: $font-principale;
+	font-size: 0.9em;
+	line-height: 1.4em;
+}
+h6 {
+	font-family: $font-principale;
+	font-size: 0.8em;
+	line-height: 1em;
+}
+
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+
+
+
+/*
+ ######   ######## ##    ## ######## ########     ###    ##       #### 
+##    ##  ##       ###   ## ##       ##     ##   ## ##   ##        ##  
+##        ##       ####  ## ##       ##     ##  ##   ##  ##        ##  
+##   #### ######   ## ## ## ######   ########  ##     ## ##        ##  
+##    ##  ##       ##  #### ##       ##   ##   ######### ##        ##  
+##    ##  ##       ##   ### ##       ##    ##  ##     ## ##        ##  
+ ######   ######## ##    ## ######## ##     ## ##     ## ######## #### 
+*/
+
+.columns {
+	border: 0px solid #CCC;
+}
+
+
+/*Un Po di reset*/
+
+a {
+	color: darken( $colore-grigio-fondo, 70% );
+}
+
+a:hover {
+	text-decoration: underline;
+}
+    
+ul {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.titolino {
+	font-family: $font-secondaria;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+}
+.titolino b {
+	font-family: $font-secondaria;
+	font-size: 1em;
+}
+
+.sidecolumn {
+	border-left: 1px solid #CCC;
+}
+
+.titolo_big {
+	font-family: $font-secondaria;
+	text-transform: uppercase;
+	font-size: 2.2em;
+	letter-spacing: 0.01em;
+}
+
+
+.titolo_mega {
+	font-family: $font-secondaria;
+	text-transform: uppercase;
+	font-size: 3.2em;
+	letter-spacing: 0.01em;
+}
+
+.random_colored {
+	color: #f1ebda;
+}
+
+.hp-panel {
+	border: 0px solid #ccc;
+	margin-bottom: 30px;
+}
+
+#loader {
+   /*background:#FFFFFF url(../images/ajax-loader.gif) no-repeat center center;*/
+   background-color: #FFF;
+   min-height: 100%;
+   width: 100%;
+   position: fixed;
+   z-index: 1000;
+   left: 0;
+   top: 0;
+   display: table-cell;
+   vertical-align: middle;
+}
+
+#ajax-loader {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	/*display: block;
+	margin-left:auto;
+	margin-right: auto;*/	
+}
+
+.content {
+	
+}
+
+.revolving-menu {
+	position: absolute;
+	height: 67px;
+	background-color: $colore-grigio-fondo;
+	top:0;
+	left: 0;
+	z-index: 101;
+}
+
+
+
+/*
+##        #######   ######    #######  
+##       ##     ## ##    ##  ##     ## 
+##       ##     ## ##        ##     ## 
+##       ##     ## ##   #### ##     ## 
+##       ##     ## ##    ##  ##     ## 
+##       ##     ## ##    ##  ##     ## 
+########  #######   ######    #######  
+*/
+
+
+.share-logo {
+	background-color: darken($colore-grigio-fondo,10%);
+	text-align: center;
+	padding: 50px 0 0 0;  // Animato 100 
+	min-height: 180px;  // Animato 400
+	padding-bottom: 0;
+		h1 {
+			font-family: 'Share-regular';
+			font-size: 5em;  // Animato 35
+    		line-height: 0.5;
+    		letter-spacing: -0.05em;
+    		margin-bottom: -0.2em;
+		}
+		h5 {
+			font-size: 1.2em;  // animato 1.6
+			font-family: 'Share-regular';
+		}
+	
+}
+
+section#hp-logo {
+	padding: 0;
+}
+
+
+
+.logo {	
+	background: url('../images/logo40.exec01.svg') 50% 0% no-repeat;
+	background-size: 80px;
+}
+#logo-spacer {
+	height: 200px;
+}
+.logo p {
+	font-family: $font-secondaria;
+	text-transform: uppercase;	
+	color: darken( $colore-grigio-fondo, 35% );
+	letter-spacing: 0.2em;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+p.logo_payoff {
+	font-family: 'Georgia';
+	font-style: italic;
+	font-size: 0.9em;
+	letter-spacing: 0.2em;
+	text-transform: capitalize;	
+	color: darken( $colore-grigio-fondo, 70% );;
+	text-align: center;
+	background: transparent url('../images/logo-shadow.png') 50% 100% no-repeat;
+	height: 80px;
+	clear: both;
+	float: none;
+	padding: 20px 0 0 0;
+}
+.logo b {
+	font-family: $font-secondaria;
+	color: #732706;
+	font-weight: 700;
+}
+p.logo_ita {
+	letter-spacing:0.1em;
+	float: left;
+	text-align: right; 
+	width: 50%;
+	border:0px solid #ccc;
+	padding-right: 50px;
+}
+p.logo_en {
+	float: right;
+	text-align: left; 
+	width: 50%;
+	border:0px solid #ccc;
+	padding-left: 50px;
+}
+.logo_large {
+	background-size: 80px;
+	padding: 35px 0 0 0;
+	margin: 20px auto 0 auto;
+	position: relative;
+	z-index: 0;
+}
+.logo_large p.logo_payoff {
+	padding-top: 50px;
+	height: 110px;
+	}
+
+.logo_medium {
+	background-size: 140px;
+	padding: 180px 0 0 0;
+	margin:50px 0 0 0;
+	
+}
+.logo_small {
+	background-size: 160px;
+	padding-top: 250px;
+	margin:65px 0 0 0;
+}
+.iss-logo {
+	/*position: absolute;
+	z-index: 200;
+	top: 86px;*/
+	background: transparent url('../images/iss-logo-small.svg') no-repeat ;
+	width: 40px;	
+	height: 40px;	;
+	/*margin: 0 0 0 -10px;*/
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+#menutop-logo {
+	position: absolute;
+    margin-top: 27px;
+    margin-left: -15px;
+}
+
+
+#logo-area {
+	border: 0px solid #ccc;
+	position: fixed;
+	top: 67px;
+	z-index: 50;
+	width: 100%;
+	background-color: #FFF;
+}
+
+/*
+##     ##    ###    ########  ########     ###       ########   #######  ########  ##     ## ########  
+###   ###   ## ##   ##     ## ##     ##   ## ##      ##     ## ##     ## ##     ## ##     ## ##     ## 
+#### ####  ##   ##  ##     ## ##     ##  ##   ##     ##     ## ##     ## ##     ## ##     ## ##     ## 
+## ### ## ##     ## ########  ########  ##     ##    ########  ##     ## ########  ##     ## ########  
+##     ## ######### ##        ##        #########    ##        ##     ## ##        ##     ## ##        
+##     ## ##     ## ##        ##        ##     ##    ##        ##     ## ##        ##     ## ##        
+##     ## ##     ## ##        ##        ##     ##    ##         #######  ##         #######  ##        
+*/
+
+
+div#projects_map {
+	background-color: #EFEFE8;
+	font-size: .9em;
+	overflow: hidden;
+	height: 0px;
+	border: 0px solid #CCC;
+	position: fixed;
+	top: 100px;
+	z-index: 51;
+	width: 100%;
+}
+div#projects_map ul li {
+	font-family: $font-principale;	
+	font-size: .9em;
+	line-height: 1.2em;
+}	
+div#projects_map ul li a {
+	color: #333;
+	margin-bottom: 10px;
+	display: block;
+}
+div.sitemap {
+	/*margin-top: 30px;*/
+    /*margin-bottom: 50px;*/
+    padding: 30px 100px 20px 100px;
+}
+div.sitemap b {
+	font-family: $font-secondaria;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 300;
+	padding-bottom: 20px;
+	display: block;
+}
+
+
+
+
+/* 
+##    ## ######## ##      ##  ######  
+###   ## ##       ##  ##  ## ##    ## 
+####  ## ##       ##  ##  ## ##       
+## ## ## ######   ##  ##  ##  ######  
+##  #### ##       ##  ##  ##       ## 
+##   ### ##       ##  ##  ## ##    ## 
+##    ## ########  ###  ###   ######  
+*/
+
+.hp-news {
+	font-family: $font-principale;
+	font-size: 0.9em; 
+	line-height: 1.3em;
+	margin-bottom: 20px;
+	display: block;
+	margin-bottom: 40px;
+}
+.hp-news-bar {
+    height: 20px;
+    display: block;
+    width: 20px;
+    margin-bottom: 6px;
+    float: left;
+    border-radius: 50%;	
+}
+.hp-news-occhiello { 
+    height: auto;
+    font-family: $font-secondaria;
+    text-transform: uppercase; 
+    font-size: 0.8em;
+    line-height: 1.1em;
+    color: #888;
+    margin: 0 0 15px 0px;
+}
+.hp-news-titolo { 
+	font-family: $font-principale-bold; 
+	font-size: 1.7em; 
+	line-height: 1.1em;
+	letter-spacing: -.03em; 
+	padding-bottom: 10px; 
+	color: #555;
+}
+.hp-news-dateinfo {
+	font-size: 1em;
+    color: #333333;
+    border-bottom: 1px solid #CCC;
+    padding: 0 0 5px 0;
+    margin-bottom: 10px;
+}
+.hp-news-dateinfo i.fa {
+	float: right;
+	color: #333333;
+	cursor: pointer;
+	padding: 4px;
+	/*border-radius: 40%;*/
+}
+.hp-news-dateinfo i.fa:hover {
+	color: #222222;			
+	}
+.hp-news-info {
+	padding: 0px;
+    border: 0px solid #CCC;
+    height: 0px;
+    margin: 14px 0 10px 10px;
+    overflow: hidden;
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+
+
+
+/*
+##     ##    ###    ########  ########     ###       ####  ######   #######  ##    ## ######## 
+###   ###   ## ##   ##     ## ##     ##   ## ##       ##  ##    ## ##     ## ###   ## ##       
+#### ####  ##   ##  ##     ## ##     ##  ##   ##      ##  ##       ##     ## ####  ## ##       
+## ### ## ##     ## ########  ########  ##     ##     ##  ##       ##     ## ## ## ## ######   
+##     ## ######### ##        ##        #########     ##  ##       ##     ## ##  #### ##       
+##     ## ##     ## ##        ##        ##     ##     ##  ##    ## ##     ## ##   ### ##       
+##     ## ##     ## ##        ##        ##     ##    ####  ######   #######  ##    ## ######## 
+*/
+
+div.hp-icons-map {
+	/*margin-bottom: 60px;*/
+}
+
+.fullscreen-map-toggler {
+	cursor: pointer;
+}
+ul.hp-icons-map {
+	padding-top: 20px;
+}
+
+ul.hp-icons-map li {
+	font-family: $font-principale-bold;
+	font-size: .98em;
+	line-height: 1.1em;
+	padding-top: 40px;
+	/*background: #fff url('../images/icon01.png') 50% 0 no-repeat;*/
+	background-repeat: no-repeat;
+}
+ul.hp-icons-map li i.hpicons {
+	display: block;
+	margin-bottom: 25px;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+    font-size: 50px;
+	font-style: normal;
+	margin-left: 20px;
+}
+
+
+/*Fonts Styles*/
+
+.big {
+	font-family: $font-principale-bold;
+	font-size: 3em;
+	line-height: 1.1em;
+	color: #4d4d4d;
+	letter-spacing: -.02em;
+}
+.big-light {
+	font-family: $font-principale;
+	font-size: 3em;
+	line-height: 1.1em;
+	color: #666;
+	letter-spacing: -.02em;
+}
+
+
+
+
+/*
+   ###    ########  ######## ####  ######   #######  ##        #######      ######  #### ##    ##  ######    #######  ##        #######  
+  ## ##   ##     ##    ##     ##  ##    ## ##     ## ##       ##     ##    ##    ##  ##  ###   ## ##    ##  ##     ## ##       ##     ## 
+ ##   ##  ##     ##    ##     ##  ##       ##     ## ##       ##     ##    ##        ##  ####  ## ##        ##     ## ##       ##     ## 
+##     ## ########     ##     ##  ##       ##     ## ##       ##     ##     ######   ##  ## ## ## ##   #### ##     ## ##       ##     ## 
+######### ##   ##      ##     ##  ##       ##     ## ##       ##     ##          ##  ##  ##  #### ##    ##  ##     ## ##       ##     ## 
+##     ## ##    ##     ##     ##  ##    ## ##     ## ##       ##     ##    ##    ##  ##  ##   ### ##    ##  ##     ## ##       ##     ## 
+##     ## ##     ##    ##    ####  ######   #######  ########  #######      ######  #### ##    ##  ######    #######  ########  #######  */
+
+p.categoria {
+	font-family:$font-secondaria;
+	text-transform: uppercase;
+	font-size: 1em; 
+	line-height: 1.1em;
+	color: #888;
+	margin: 0 0 10px 0;
+}
+p.titolo {	
+	margin: 0 0 30px 0;
+}
+p.data {
+	font-family: $font-principale-bold;
+	font-size: 1.2em;
+	color: #777;
+	margin-bottom: 8px;	
+}
+p.key-autore, p.key-keywords  {
+	font-size: 1em;
+	line-height: 1.3em;
+	margin: 0 0 0 20px;
+	padding: 0 20px 0 20px;
+	border-left:1px solid #ccc;
+}
+p.key-autore {
+	padding-bottom: 20px;
+}
+p.key-keywords {
+	padding-top: 20px;
+	border-top:1px solid #ccc;
+}
+img.single-article-featured {
+	/*width: 240px;*/
+/*	height: 200px;
+*/	margin: 0 0 20px 20px;
+	padding-right: 20px;
+}
+
+
+
+/*
+########     ###     ######   #### ##    ##    ###       ########  ########   #######   ######   ######## ######## ########  #######  
+##     ##   ## ##   ##    ##   ##  ###   ##   ## ##      ##     ## ##     ## ##     ## ##    ##  ##          ##       ##    ##     ## 
+##     ##  ##   ##  ##         ##  ####  ##  ##   ##     ##     ## ##     ## ##     ## ##        ##          ##       ##    ##     ## 
+########  ##     ## ##   ####  ##  ## ## ## ##     ##    ########  ########  ##     ## ##   #### ######      ##       ##    ##     ## 
+##        ######### ##    ##   ##  ##  #### #########    ##        ##   ##   ##     ## ##    ##  ##          ##       ##    ##     ## 
+##        ##     ## ##    ##   ##  ##   ### ##     ##    ##        ##    ##  ##     ## ##    ##  ##          ##       ##    ##     ## 
+##        ##     ##  ######   #### ##    ## ##     ##    ##        ##     ##  #######   ######   ########    ##       ##     #######  
+*/
+
+article {
+	min-height: 800px;	
+}
+
+.main-proj-column {
+	border-right:1px solid #ccc;
+}
+
+img.thumb-288 {
+	width: 288px;
+	height: 138px;
+	margin-bottom: 50px;	
+}
+
+.titolo-sidebox {
+	padding: 10px 0 20px 0;
+}
+div.colored-box {
+	height: 10px;
+	width: 50%;
+	margin: 0 0 20px 0;
+}
+div.colored-box:first-child {
+	height: 10px;
+	width: 50%;
+	margin: 0 0 0 0;
+}
+
+ul.staff-list li {
+	text-align: left;
+	margin: 0;
+	padding: 0;
+
+	 a, a:visited {
+	 	color: #000000	;
+	 }
+}
+
+h3.excerpt, h3.proj_main_goal {
+	color: #666;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    padding: 8px 0 20px;
+}
+
+.staff-mini-image {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	margin: 0 0 5px 0;
+}
+.staff-big-image {
+	margin-top: 20px;
+}
+
+
+ul.social-list {
+	margin: -5px 0 0 -5px;
+	font-size: 1em;
+}
+
+ul.social-list li {
+	margin: 0 6px 0 0;
+}
+
+a.pdf-download {
+	color: #000000;
+	position: relative;
+	display: block;
+	background: url(../images/pdf-icon.png) no-repeat 0 0 ;
+	-webkit-background-size: 25px;
+	background-size: 25px;
+	padding: 0 0 0 40px;
+	margin: 20px 0 0 0;
+	min-height: 50px;
+}
+
+.pdf-abstract {
+	font-size: 0.9em;
+	line-height: 1.2em;
+}
+
+b.attach_size {
+	float: left;
+	position: absolute;
+	top: 45px;
+	left: 0;
+}
+
+
+
+
+		p.doc-autori, .doc-opener  {
+			@extend h3;
+			line-height: 1.3em;
+			font-size: 0.7em;
+			margin-bottom: 5px;	
+		}
+		p.doc-titolo {
+			line-height: 1.3em;
+			font-size: 0.9em;
+		}
+		div.doc-abstract {
+			display:none;
+		}
+		.doc-opener {
+			margin: 10px 0 0 0;
+		}
+
+.mappina_progetto {
+	margin:  0 0 50px 0;
+}
+.datamaps-legend {
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	z-index: 100;	
+	dl dt {
+			font-family: $font-principale;
+		    font-size: 0.9em;
+    		line-height: 1.2em;
+    		font-weight: 300;
+    		float: none;
+    		display: block;
+		    margin-bottom: 6px;
+	}
+	dd {
+			width: 10px;
+		    margin-right: 6px;
+		    border-radius: 0px;
+	}
+}
+
+
+.mappina_legend {
+	background-color: #fff;
+	padding: 5px;
+	font-family: $font-principale;
+}
+
+.mappina_zoom {
+	@extend .datamaps-legend ;
+	left: 92%;
+	top:0;
+		i {
+			margin-right: 2px;
+			color: #464346;
+		}
+}
+
+
+/*
+########  #######   #######  ######## ######## ########  
+##       ##     ## ##     ##    ##    ##       ##     ## 
+##       ##     ## ##     ##    ##    ##       ##     ## 
+######   ##     ## ##     ##    ##    ######   ########  
+##       ##     ## ##     ##    ##    ##       ##   ##   
+##       ##     ## ##     ##    ##    ##       ##    ##  
+##        #######   #######     ##    ######## ##     ## 
+*/
+
+div.footer-container {
+	min-height: 400px;
+	width: 100%;
+	background: $colore-grigio-fondo url(../images/cnsg.logo.white.png) no-repeat 50% 20px;
+	-webkit-background-size: 80px;
+	background-size: 100px;
+	padding: 160px 0 0 0;
+	margin: 60px 0 0 0;
+	color: #333;
+	text-align: center;
+}
+
+
+
+/*
+ ######  ########  ######  ######## ####  #######  ##    ##  ######  
+##    ## ##       ##    ##    ##     ##  ##     ## ###   ## ##    ## 
+##       ##       ##          ##     ##  ##     ## ####  ## ##       
+ ######  ######   ##          ##     ##  ##     ## ## ## ##  ######  
+      ## ##       ##          ##     ##  ##     ## ##  ####       ## 
+##    ## ##       ##    ##    ##     ##  ##     ## ##   ### ##    ## 
+ ######  ########  ######     ##    ####  #######  ##    ##  ######  
+*/
+
+section  {
+	padding: 0 0 20px 0;
+}
+
+div.section-title {
+	margin: 20px 0 50px 0;
+	text-align: center;
+	position: relative;	
+}
+div.section-title b {
+	font-weight: 700;
+	}
+div.section-title:before {
+	content:"";
+    position: absolute;
+    top: 50%;    
+    left: 0;    
+    border-top:1px solid #CCC;
+    width: 40%;
+    z-index: 1;
+}
+div.section-title:after {
+	content:"";
+    position: absolute;
+    top: 50%;    
+    left: 60%;    
+    border-top:1px solid #CCC;
+    width: 40%;
+    z-index: 2;
+}
+
+
+/*
+##    ##    ###    ##     ## ####  ######      ###    ######## ####  #######  ##    ## ########    ########  #######  ########  
+###   ##   ## ##   ##     ##  ##  ##    ##    ## ##        ##   ##  ##     ## ###   ## ##             ##    ##     ## ##     ## 
+####  ##  ##   ##  ##     ##  ##  ##         ##   ##      ##    ##  ##     ## ####  ## ##             ##    ##     ## ##     ## 
+## ## ## ##     ## ##     ##  ##  ##   #### ##     ##    ##     ##  ##     ## ## ## ## ######         ##    ##     ## ########  
+##  #### #########  ##   ##   ##  ##    ##  #########   ##      ##  ##     ## ##  #### ##             ##    ##     ## ##        
+##   ### ##     ##   ## ##    ##  ##    ##  ##     ##  ##       ##  ##     ## ##   ### ##             ##    ##     ## ##        
+##    ## ##     ##    ###    ####  ######   ##     ## ######## ####  #######  ##    ## ########       ##     #######  ##        
+
+*/
+
+
+
+
+div.menutop  {
+	position: fixed;
+	z-index: 101;
+	top: 0;
+	left: 0;
+	background-color: $colore-grigio-fondo;
+	height: 67px;
+	width: 100%;
+	padding:20px 10px 0 10px;
+	margin: 0px;
+	overflow: hidden;
+}
+
+div.menutop ul li {
+	// height: 67px;
+	padding: 0 10px 10px 20px;
+	margin: 0px;
+}
+
+div.menutop ul li a {
+	@extend h3;
+	padding-left: 10px;
+}
+
+div.menutop ul#scelta_lingua li:last-child:before {
+	content: "";
+    position: absolute;
+    top: 30%;
+    bottom: 30%;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 150px;
+}
+
+span.fa-stack.fa-lg {
+	font-size: 1.1em;
+}
+ul#social {
+	margin: 0 180px 0 0;
+	overflow: visible;
+	font-size: 10px;
+}
+ul#social li {
+	color: #6F6F6E;
+	margin: -6px -26px 0 0;
+}
+ul#social li h3 {
+	color: #6F6F6E;
+}
+
+
+
+/*Secondo Menu 
+ ######  ########  ######   #######  ##    ## ########   #######     ##     ## ######## ##    ## ##     ##    
+##    ## ##       ##    ## ##     ## ###   ## ##     ## ##     ##    ###   ### ##       ###   ## ##     ##    
+##       ##       ##       ##     ## ####  ## ##     ## ##     ##    #### #### ##       ####  ## ##     ##    
+ ######  ######   ##       ##     ## ## ## ## ##     ## ##     ##    ## ### ## ######   ## ## ## ##     ##    
+      ## ##       ##       ##     ## ##  #### ##     ## ##     ##    ##     ## ##       ##  #### ##     ##    
+##    ## ##       ##    ## ##     ## ##   ### ##     ## ##     ##    ##     ## ##       ##   ### ##     ##    
+ ######  ########  ######   #######  ##    ## ########   #######     ##     ## ######## ##    ##  #######     
+*/
+
+
+div.menudue {
+	/*display: none;*/
+	position: fixed;
+	z-index: 151;
+	top: -67px;
+	left: 0;
+	width: 100%;
+	height: 67px;
+	padding: 20px 0 10px 0;
+    background: $colore-grigio-fondo url('../images/cnsg-minilogo.png') no-repeat 50% 50%;
+    /*	-webkit-background-size: contain;
+	background-size: contain;*/
+}
+
+#menudue-logo-iss {
+	float: right;
+	margin: -31px -10px 0 0;
+}
+.menudue-logo {
+	text-align: center;
+}
+
+.menudue-logo h3#logosx {
+	display: inline;
+	margin-right: 60px;
+}
+.menudue-logo h3#logodx {
+	display: inline;
+}
+
+/*Mappona fullscreen progetti
+
+##     ## ######## ##    ## ##     ##    ######## ##     ## ##       ##        ######   ######  ########  ######## ######## ##    ## 
+###   ### ##       ###   ## ##     ##    ##       ##     ## ##       ##       ##    ## ##    ## ##     ## ##       ##       ###   ## 
+#### #### ##       ####  ## ##     ##    ##       ##     ## ##       ##       ##       ##       ##     ## ##       ##       ####  ## 
+## ### ## ######   ## ## ## ##     ##    ######   ##     ## ##       ##        ######  ##       ########  ######   ######   ## ## ## 
+##     ## ##       ##  #### ##     ##    ##       ##     ## ##       ##             ## ##       ##   ##   ##       ##       ##  #### 
+##     ## ##       ##   ### ##     ##    ##       ##     ## ##       ##       ##    ## ##    ## ##    ##  ##       ##       ##   ### 
+##     ## ######## ##    ##  #######     ##        #######  ######## ########  ######   ######  ##     ## ######## ######## ##    ## 
+
+*/
+
+div#fullscreen-mega-map {
+	background-color: darken( $colore-grigio-fondo, 2% );
+	position: absolute;
+	top:0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 9999;
+	padding: 50px 0 200px 0;
+	// display: none;
+	// opacity: 0;
+	margin-top: -33px;
+}
+.fullscreen-mega-map-inactive {
+	opacity: 0;
+	display: none;;
+}
+.fullscreen-mega-map-active {
+	opacity: 1;
+	display: block;
+}
+.logo-fullscreen-map {
+	padding: 35px 0 80px 0;
+}
+ul#menu-menu-progetti ul {
+	border: 0px solid #FFF;
+	margin: 0px;
+	padding: 10px 0 10px 0;
+}
+ul#menu-menu-progetti li, ul.sub-menu li {
+	margin: 0px;
+	
+	cursor: pointer;
+	display: block;
+}
+/*Titolo dell area */
+li.menu-item-object-progetto a {
+	font-family: $font-secondaria;
+	font-size: 18px;
+	line-height: 20px;
+	margin: 0 0 0 0;	
+}
+/*Titolo di secondo livello*/
+ul.sub-menu li.menu-item-object-progetto a {
+	font-family: $font-principale-bold;
+	font-size: 15px;
+}
+a.inactive-menu-a:hover {
+	text-decoration: none;
+	color: #888;
+	cursor:default;
+}
+i.fa-times {
+	position: absolute;
+	top: -10px;
+	left: 100%;
+	color: darken( $colore-grigio-fondo, 50% );
+	font-size: 1.6em;
+	cursor: pointer;
+}
+
+/*
+##     ##  #######  ########  #### ##       ######## 
+###   ### ##     ## ##     ##  ##  ##       ##       
+#### #### ##     ## ##     ##  ##  ##       ##       
+## ### ## ##     ## ########   ##  ##       ######   
+##     ## ##     ## ##     ##  ##  ##       ##       
+##     ## ##     ## ##     ##  ##  ##       ##       
+##     ##  #######  ########  #### ######## ######## 
+*/
+.m-menutop  {
+	height: 67px;
+	width: 100%;
+	padding:20px 0 0 0;	
+}
+
+.inner-wrap {
+	height: 100%;
+	padding: 10px;	
+}
+.off-canvas-wrap {
+	margin: -67px 0 0 0;
+	height: 100%;	
+}
+.inner-wrap:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	z-index: -1;
+	background-color: $colore-grigio-fondo;
+}
+aside.left-off-canvas-menu {
+	padding-top: 120px;
+	background: #333333 url('../images/cnsg.logo.white.png') no-repeat 50% 40px;
+	background-size: 40px;
+}
+ul.left-menu-mobile li a h3, ul.left-submenu li a h3 {
+	color: #fff;
+	display: inline;
+	font-size: 0.7em;
+}
+
+.left-submenu {
+	height: 100%
+}
+
+ul.off-canvas-list li a {
+	padding: 5px 18px 8px 18px;
+}
+
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after {    
+    content: '';
+}
+li.has-submenu i {
+	padding: 0 0 0 10px;
+	font-size: 0.6em;
+}
+
+
+
+
+/*######  ##       ##     ##  ######   #### ##    ##  ######  
+##     ## ##       ##     ## ##    ##   ##  ###   ## ##    ## 
+##     ## ##       ##     ## ##         ##  ####  ## ##       
+########  ##       ##     ## ##   ####  ##  ## ## ##  ######  
+##        ##       ##     ## ##    ##   ##  ##  ####       ## 
+##        ##       ##     ## ##    ##   ##  ##   ### ##    ## 
+##        ########  #######   ######   #### ##    ##  ######  */
+
+
+
+li p.flex-caption {
+	font-family: $font-principale;
+    color: #FFFFFF;
+    background-color: #000000; 
+    margin: 0 20px 0 0;
+    padding: 20px;
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    font-size: 1.8em;
+    line-height: 1em;
+    font-weight: 700;
+}
+li p.flex-caption.small {
+  color: #FFFFFF;
+  background-color: #000000;
+  position: absolute;  
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  font-size: 1.6em;
+  padding: 20px;
+  font-size:  1.2em;
+  line-height: 1.1em;
+  font-weight: 300;
+}
+.slide-cat {
+  display: block;
+  font-family: $font-secondaria;
+  text-transform: uppercase;
+  font-size: 0.5em; 
+  line-height: 1.2em;
+  width: auto;
+}
+
+.slide-cat-small {
+  display: block;
+  margin: 0 0 5px 0;
+  font-family: $font-secondaria;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  line-height: 1.2em;
+  width: auto;
+
+}
+
+div.chart-numerone {
+	font-family: $font-principale-bold;
+	color: #999;
+	font-size: 1.9em;	
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    text-align: center;
+}
+
+
+div.chart-label {	
+	font-family: $font-principale;
+    color: #6D6737;
+    font-size: 1.2em;
+    line-height: 1em;
+    margin: 5% 0 0 0;
+}
+
