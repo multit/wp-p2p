@@ -105,18 +105,18 @@
 
         <!-- area logo-area -->
         <div id="logo-area">
-                <div class="row show-for-medium-up">
-                    <a href="<?php bloginfo('url'); ?>">
-                    
-                    <div id="menutop-logo" class="iss-logo <?php (is_home())  ? print 'animated' :'' ?>"></div>
-                    <div class="columns small-12 logo logo_large <?php (is_home())  ? print 'animated' :'' ?>"  id="logo-animato">
-                        <p class="logo_en">Italian Center For <b>Global Health</b></p>
-                        <p class="logo_ita">Centro Nazionale <b>per la Salute Globale</b></p>                
-                        <p class="logo_payoff">Research and Action to Fight Health Inequalities Worldwide</p>
-                    </div>
+            <section id="hp-logo">
+ <div class="share-logo">
 
-                    </a>
-                </div>
+  <div class="row">
+    <div class="columns">
+      <h1 class="random_colored share-animated-entry">SHARE</h1>
+      <h5>Research and Action to Fight Health Inequalities Worldwide</h5>
+    </div>
+  </div>
+   
+ </div>
+</section>
         </div>
         <!-- end logo-area -->
             

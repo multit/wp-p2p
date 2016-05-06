@@ -35,7 +35,7 @@ $curr_col = 1;
 
 		<?php if ($abstract != ""): ?>
 
-		<div class="column document-box large-<?php  echo $n_colonne ?>  end">
+		<div class="column document-box large-<?php  echo $n_colonne ?> end document-box">
 			<a data-open="pub<?php echo $pubb->ID; ?>">
 				<p class="doc-autori"><?php //echo $curr_col ?> <?php echo $autori; ?></p>
 				<p class="doc-titolo"><?php echo $pubb->post_title; ?></p>
@@ -47,7 +47,9 @@ $curr_col = 1;
 				<h2 class="random_colored">Abstract</h2>
 				<h4><?php echo $pubb->post_title; ?></h4>
 				<?php echo $abstract; ?>
-				<a href=""><h3>Download file</h3></a>
+				<a href=""><p class="doc-opener">
+					Download file
+				</p></a>
 		</div>   
 
 		<?php endif ?>

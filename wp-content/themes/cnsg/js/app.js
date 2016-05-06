@@ -34,12 +34,21 @@ var app = (function(document, $) {
 
       $(window).load(function() {
         //console.log('window loaded da init');
+        $('.share-animated-entry').css('opacity', 0);
         var tl = new TimelineLite();        
         tl.to('#ajax-loader', 0.4, {delay:1,rotation:720, scale:0, ease:Cubic.easeOut})                
-        .to('#loader', 0.3, {autoAlpha:0});
+        .to('#loader', 0.3, {autoAlpha:0, onComplete:animazioneEntry});
       });
 
 
+      function animazioneEntry() {
+          TweenMax.fromTo($('.share-animated-entry'), 2, 
+            { opacity:0 },{ opacity:1 }
+        );
+      }
+
+      
+      
 
 /*
  ######   #######  ##        #######  ########  #### 
@@ -205,7 +214,7 @@ $('.info-expander').click(function(event) {
               'hb' : 140,  // Dimensione iniziale logo
               'pt' : 160, // Padding-top del logo
               'mt' : 20,  // Margin-top del logo
-              'bm' : 300,  // Altezza del logo-spacer.animated
+              'bm' : 275,  // Altezza del logo-spacer.animated originale 300
               'issW' : 61, // Larghezza logo ISS in home
               'issH' : 61  // Altezza logo ISS in home
             };      
