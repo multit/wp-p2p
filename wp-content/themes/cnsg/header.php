@@ -110,7 +110,7 @@
 
   <div class="row">
     <div class="columns">
-      <h1 class="random_colored share-animated-entry">SHARE</h1>
+      <h1 class="random_colored share-animated-entry">SHARE!</h1>
       <h5>Research and Action to Fight Health Inequalities Worldwide</h5>
     </div>
   </div>
