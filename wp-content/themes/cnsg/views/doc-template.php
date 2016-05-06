@@ -32,18 +32,26 @@ $curr_col = 1;
 		}
 		?>
 
-		<div class="column  document-box large-<?php  echo $n_colonne ?>  end">
-		<p class="doc-autori"><?php //echo $curr_col ?> <?php echo $autori; ?></p>
-		<p class="doc-titolo"><?php echo $pubb->post_title; ?></p>
 
 		<?php if ($abstract != ""): ?>
-		<div class="reveal" id="pub<?php echo $pubb->ID; ?>" data-reveal>    	
-				Abstract:<?php echo $abstract; ?>
-		</div>    
-		<?php endif ?>
-		<a data-open = "pub<?php echo $pubb->ID; ?>">abstract</a>
 
+		<div class="column document-box large-<?php  echo $n_colonne ?>  end">
+			<a data-open="pub<?php echo $pubb->ID; ?>">
+				<p class="doc-autori"><?php //echo $curr_col ?> <?php echo $autori; ?></p>
+				<p class="doc-titolo"><?php echo $pubb->post_title; ?></p>
+				<p class="doc-opener">abstract &amp; download</p>
+			</a>
 		</div>
+
+		<div class="reveal doc-popup-abstract" data-reveal id="pub<?php echo $pubb->ID; ?>">    	
+				<h2 class="random_colored">Abstract</h2>
+				<h4><?php echo $pubb->post_title; ?></h4>
+				<?php echo $abstract; ?>
+				<a href=""><h3>Download file</h3></a>
+		</div>   
+
+		<?php endif ?>
+
 
 <?php 
 $curr_col ++;
