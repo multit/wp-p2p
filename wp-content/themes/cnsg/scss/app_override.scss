@@ -50,23 +50,6 @@ $font-secondaria: 'Montserrat-regular';
     src: url("../fonts/montserrat/Montserrat-Regular.otf") format('opentype');
 }
 
-@font-face {
-    font-family: 'Share-regular';
-    src: url("../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.otf") format('opentype');
-}
-
-
-@font-face {
-    font-family: 'Share-regular';
-    src: url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.eot');
-    src: url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.woff') format('woff'),
-         url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.ttf') format('truetype'),
-         url('../fonts/share_regularosf_macroman/Share-RegularOSF-webfont.svg#share-regularosfregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 body, ul ,li  {
 	font-family: $font-principale;
@@ -231,26 +214,6 @@ ul {
 }
 
 
-.share-logo {
-	background-color: darken($colore-grigio-fondo,10%);
-	text-align: center;
-	padding: 105px 0 0 0;
-	min-height: 400px;
-		h1 {
-			font-family: 'Share-regular';
-			font-size: 18em;
-    		line-height: 0.5;
-    		letter-spacing: -0.05em;
-		}
-		h5 {
-			font-size: 1.6em;
-			font-family: 'Share-regular';
-		}
-	
-}
-section#hp-logo {
-	padding: 0;
-}
 
 /*
 ##        #######   ######    #######  
@@ -336,14 +299,10 @@ p.logo_en {
 	padding-top: 250px;
 	margin:65px 0 0 0;
 }
-.iss-logo {
-	/*position: absolute;
-	z-index: 200;
-	top: 86px;*/
+.iss-logo {	
 	background: transparent url('../images/iss-logo-small.svg') no-repeat ;
 	width: 40px;	
 	height: 40px;	;
-	/*margin: 0 0 0 -10px;*/
 	-webkit-background-size: contain;
 	background-size: contain;
 }
@@ -486,68 +445,6 @@ div.sitemap b {
 
 
 
-/*
-##     ##    ###    ########  ########     ###       ####  ######   #######  ##    ## ######## 
-###   ###   ## ##   ##     ## ##     ##   ## ##       ##  ##    ## ##     ## ###   ## ##       
-#### ####  ##   ##  ##     ## ##     ##  ##   ##      ##  ##       ##     ## ####  ## ##       
-## ### ## ##     ## ########  ########  ##     ##     ##  ##       ##     ## ## ## ## ######   
-##     ## ######### ##        ##        #########     ##  ##       ##     ## ##  #### ##       
-##     ## ##     ## ##        ##        ##     ##     ##  ##    ## ##     ## ##   ### ##       
-##     ## ##     ## ##        ##        ##     ##    ####  ######   #######  ##    ## ######## 
-*/
-
-div.hp-icons-map {
-	/*margin-bottom: 60px;*/
-}
-
-.fullscreen-map-toggler {
-	cursor: pointer;
-}
-ul.hp-icons-map {
-	padding-top: 20px;
-}
-
-ul.hp-icons-map li {
-	font-family: $font-principale-bold;
-	font-size: .98em;
-	line-height: 1.1em;
-	padding-top: 40px;
-	/*background: #fff url('../images/icon01.png') 50% 0 no-repeat;*/
-	background-repeat: no-repeat;
-}
-ul.hp-icons-map li i.hpicons {
-	display: block;
-	margin-bottom: 25px;
-}
-
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
-	font-family: Flaticon;
-    font-size: 50px;
-	font-style: normal;
-	margin-left: 20px;
-}
-
-
-/*Fonts Styles*/
-
-.big {
-	font-family: $font-principale-bold;
-	font-size: 3em;
-	line-height: 1.1em;
-	color: #4d4d4d;
-	letter-spacing: -.02em;
-}
-.big-light {
-	font-family: $font-principale;
-	font-size: 3em;
-	line-height: 1.1em;
-	color: #666;
-	letter-spacing: -.02em;
-}
-
-
-
 
 /*
    ###    ########  ######## ####  ######   #######  ##        #######      ######  #### ##    ##  ######    #######  ##        #######  
@@ -612,6 +509,10 @@ article {
 	min-height: 800px;	
 }
 
+h2.section-head {
+    margin-top: 40px;
+}
+
 .main-proj-column {
 	border-right:1px solid #ccc;
 }
@@ -643,6 +544,10 @@ ul.staff-list li {
 
 	 a, a:visited {
 	 	color: #000000	;
+	 }
+	 h5 {
+	 	font-family: $font-principale-bold;
+	 	line-height: 1.2em;	 	
 	 }
 }
 
@@ -699,8 +604,11 @@ b.attach_size {
 
 
 
+ul.document-box, div.document-box {
 
-		p.doc-autori, .doc-opener  {
+		margin-bottom: 20px;
+
+		p.doc-autori, a {
 			@extend h3;
 			line-height: 1.3em;
 			font-size: 0.7em;
@@ -713,10 +621,8 @@ b.attach_size {
 		div.doc-abstract {
 			display:none;
 		}
-		.doc-opener {
-			margin: 10px 0 0 0;
-		}
 
+}
 .mappina_progetto {
 	margin:  0 0 50px 0;
 }
@@ -902,33 +808,35 @@ ul#social li h3 {
 */
 
 
-div.menudue {
-	/*display: none;*/
+div.revolving-menu {
 	position: fixed;
-	z-index: 151;
-	top: -67px;
+	z-index: 1510;
+	top: -100000px;
+	min-height: 67px;
 	left: 0;
-	width: 100%;
-	height: 67px;
-	padding: 20px 0 10px 0;
-    background: $colore-grigio-fondo url('../images/cnsg-minilogo.png') no-repeat 50% 50%;
-    /*	-webkit-background-size: contain;
-	background-size: contain;*/
+	width: 100%;	
+    background: $colore-grigio-fondo  no-repeat 50% 50%;    
+    .content {
+    	padding: 20px 0 20px 0;
+    }
 }
 
-#menudue-logo-iss {
+#revolving-menu-logo-iss {
 	float: right;
 	margin: -31px -10px 0 0;
 }
-.menudue-logo {
+.revolving-menu-logo {
 	text-align: center;
+	background: $colore-grigio-fondo url('../images/logo40.exec01.svg') no-repeat 50% 50%;
+	-webkit-background-size: contain;
+	background-size: contain;	
 }
 
-.menudue-logo h3#logosx {
+.revolving-menu-logo h3#logosx {
 	display: inline;
 	margin-right: 60px;
 }
-.menudue-logo h3#logodx {
+.revolving-menu-logo h3#logodx {
 	display: inline;
 }
 
@@ -946,20 +854,21 @@ div.menudue {
 
 div#fullscreen-mega-map {
 	background-color: darken( $colore-grigio-fondo, 2% );
-	position: absolute;
-	top:0px;
+	position: fixed;
+	top:67px;
 	left: 0px;
 	height: 100%;
 	width: 100%;
 	z-index: 9999;
-	padding: 50px 0 200px 0;
-	// display: none;
-	// opacity: 0;
-	margin-top: -33px;
+	padding: 100px 0 200px 0;
+}
+
+.fullscreen-mega-map-container {
+	position: relative;
 }
 .fullscreen-mega-map-inactive {
 	opacity: 0;
-	display: none;;
+	display: none;
 }
 .fullscreen-mega-map-active {
 	opacity: 1;
@@ -974,8 +883,7 @@ ul#menu-menu-progetti ul {
 	padding: 10px 0 10px 0;
 }
 ul#menu-menu-progetti li, ul.sub-menu li {
-	margin: 0px;
-	
+	margin: 0px;	
 	cursor: pointer;
 	display: block;
 }
@@ -1004,6 +912,66 @@ i.fa-times {
 	font-size: 1.6em;
 	cursor: pointer;
 }
+
+
+
+/*
+##     ##    ###    ########  ########     ###       ####  ######   #######  ##    ## ######## 
+###   ###   ## ##   ##     ## ##     ##   ## ##       ##  ##    ## ##     ## ###   ## ##       
+#### ####  ##   ##  ##     ## ##     ##  ##   ##      ##  ##       ##     ## ####  ## ##       
+## ### ## ##     ## ########  ########  ##     ##     ##  ##       ##     ## ## ## ## ######   
+##     ## ######### ##        ##        #########     ##  ##       ##     ## ##  #### ##       
+##     ## ##     ## ##        ##        ##     ##     ##  ##    ## ##     ## ##   ### ##       
+##     ## ##     ## ##        ##        ##     ##    ####  ######   #######  ##    ## ######## 
+*/
+
+
+.fullscreen-map-toggler {
+	cursor: pointer;
+}
+ul.hp-icons-map {
+	padding-top: 50px;
+}
+
+ul.hp-icons-map li {
+	font-family: "Roboto-Slab-regular";
+    font-size: 1.1em;
+    line-height: 1.1em;
+    padding: 0 50px 50px 50px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+ul.hp-icons-map li a {
+	display: block;
+	margin: 25px 0 0 0;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+    font-size: 50px;
+	font-style: normal;
+	margin-left: 20px;
+}
+
+
+/*Fonts Styles*/
+
+.big {
+	font-family: $font-principale-bold;
+	font-size: 3em;
+	line-height: 1.1em;
+	color: #4d4d4d;
+	letter-spacing: -.02em;
+}
+.big-light {
+	font-family: $font-principale;
+	font-size: 3em;
+	line-height: 1.1em;
+	color: #666;
+	letter-spacing: -.02em;
+}
+
 
 /*
 ##     ##  #######  ########  #### ##       ######## 

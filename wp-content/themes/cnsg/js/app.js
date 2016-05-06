@@ -34,21 +34,12 @@ var app = (function(document, $) {
 
       $(window).load(function() {
         //console.log('window loaded da init');
-        $('.share-animated-entry').css('opacity', 0);
         var tl = new TimelineLite();        
         tl.to('#ajax-loader', 0.4, {delay:1,rotation:720, scale:0, ease:Cubic.easeOut})                
-        .to('#loader', 0.3, {autoAlpha:0, onComplete:animazioneEntry});
+        .to('#loader', 0.3, {autoAlpha:0});
       });
 
 
-      function animazioneEntry() {
-          TweenMax.fromTo($('.share-animated-entry'), 2, 
-            { opacity:0 },{ opacity:1 }
-        );
-      }
-
-      
-      
 
 /*
  ######   #######  ##        #######  ########  #### 
@@ -97,17 +88,6 @@ var app = (function(document, $) {
             var randomnumber=Math.floor(Math.random()*lun_colors); 
             $(this).css('color', colors[randomnumber]);            
       });
-
-      // Colora titolini in maniera random (un solo colore random)
-      $( '.random_colored_backgr' ).each(function( index ) {            
-            var message = $( this ).text();
-            var lun_message = message.length;
-            var colors = new Array('#88101D','#AC9865','#615931','#25545D','#C89B67','#AC502A','#008173','#735079','#8A8444','#956F3E');
-            var lun_colors = colors.length;
-            var randomnumber=Math.floor(Math.random()*lun_colors); 
-            $(this).css('background-color', colors[randomnumber]); 
-            $(this).css('color', '#FFFFFF');            
-      });      
 
 
 
@@ -172,14 +152,33 @@ $('.info-expander').click(function(event) {
       });
       
       // Mostra la mappa full screen del sito
+
       $('.fullscreen-map-toggler').click(function(event) {
           event.preventDefault();          
           toggleFullscreenMap();                
       });      
 
       function toggleFullscreenMap() {
-        TweenMax.to( $(".fullscreen-mega-map-active"), 0.6, { css:{className:"fullscreen-mega-map-inactive"} });   
-        TweenMax.to( $(".fullscreen-mega-map-inactive"), 0.2, { css:{className:"fullscreen-mega-map-active"} });   
+
+        //var scrollNow = $(window).scrollTop();
+        //$('#fullscreen-mega-map').css('top', scrollNow );
+        TweenMax.to( $(".fullscreen-mega-map-active"), 0.6, { css:{className:"fullscreen-mega-map-inactive"} });    
+        TweenMax.to( $(".fullscreen-mega-map-inactive"), 0.2, { css:{className:"fullscreen-mega-map-active"} });    
+        // // Se non è visibile
+        //   if ($('#fullscreen-mega-map').css('display') === 'none') {
+        //     $('body').css('overflow', 'hidden');
+        //     $(this).parent().css('backgroundColor', '#EFEFE8');
+        //     $('#fullscreen-mega-map').css('overflow', 'auto');
+        //     TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:1,display:'block', top:$(window).scrollTop()});
+        //     $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
+        //   } 
+        //   // Se invece è il menu è aperto
+        //   else{
+        //     TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
+        //     $(this).parent().css('backgroundColor', 'transparent');
+        //     $('body').css('overflow', 'auto');
+        //     $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
+        //   }    
       };
 
       // Chiude la mappa fullscreen cliccandoci sopra ma i link continuano a funzionare
@@ -188,9 +187,19 @@ $('.info-expander').click(function(event) {
       });   
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   },   // end init function
-
-
 
 
       _animazione_logo = function() {
@@ -198,8 +207,6 @@ $('.info-expander').click(function(event) {
             // variabili altezza maassima di scrollspay e dimensioni CSS iniziali e finali
             var scrollspy_max = 570;
 
-
-            // Come valori finali use i valori applicati con i css vedi .logo_large 
             var endVal = {
               'hb' : parseInt( $('#logo-animato').css('background-size') , 10),
               'pt' : parseInt( $('#logo-animato').css('padding-top') , 10),
@@ -209,14 +216,13 @@ $('.info-expander').click(function(event) {
               'issH' : parseInt( $('#menutop-logo').css('height') , 10)
             };
 
-            // Questi sono i valori all'inizio
             var beginVal = {
-              'hb' : 140,  // Dimensione iniziale logo
-              'pt' : 160, // Padding-top del logo
-              'mt' : 20,  // Margin-top del logo
-              'bm' : 275,  // Altezza del logo-spacer.animated originale 300
-              'issW' : 61, // Larghezza logo ISS in home
-              'issH' : 61  // Altezza logo ISS in home
+              'hb' : 160,  // Dimensione iniziale logo
+              'pt' : 180,
+              'mt' : 40,
+              'bm' : 323,  // Altezza del logo-spacer.animated
+              'issW' : 61,
+              'issH' : 61
             };      
             
             // Imposta lo stato iniziale
@@ -293,13 +299,7 @@ $('.info-expander').click(function(event) {
            });
 
       };  // end animazione minore
-	
-
-
-
-
-
-  return {
+	return {
 		init: _init,
     animazioneLogo: _animazione_logo
 	};

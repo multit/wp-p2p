@@ -6,6 +6,8 @@
 ?>
 
 
+
+
 <section id="hp-slider">
   <?php 
             $bigslides = get_post(251);
@@ -13,6 +15,8 @@
             echo $output;
   ?>
 </section>
+
+
 
 
 <section id="news">
