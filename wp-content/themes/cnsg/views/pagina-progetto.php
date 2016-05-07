@@ -100,15 +100,15 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 
 
 <h2>Project Geographical Areas</h2>
- <div id="mappina" class="mappina_progetto"></div> 
- <div class="mappina_zoom">
-   <a href="" class="zoom-button" data-zoom="reset"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
-  <a href="" class="zoom-button" data-zoom="in"> <i class="fa fa-plus" aria-hidden="true"></i></a>
-   <a href="" class="zoom-button" data-zoom="out"><i class="fa fa-minus" aria-hidden="true"></i></a>
- </div>
+ <div id="mappina" class="mappina_progetto columns  "></div>
 
-  <?php echo killer_datamap("mappina", $aree_proj, $rl_category_color ); ?>
-  
+  <!--  mapp.js -->
+  <?php 
+      // echo killer_datamap("mappina", $aree_proj, $rl_category_color ); 
+      zooming_datamap();
+  ?>
+
+
 
   <?php the_content( ); ?>
 

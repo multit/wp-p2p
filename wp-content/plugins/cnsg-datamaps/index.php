@@ -62,10 +62,31 @@ Domain Path: Domain Path
         wp_enqueue_script( 'd3', plugins_url( 'js/d3.min.js', __FILE__ ), array( 'jquery' ), false, false);        
         wp_enqueue_script( 'topojson', plugins_url( 'js/topojson.js', __FILE__ ), array(  'jquery' ), false, false);
         wp_enqueue_script( 'datamaps-world', plugins_url( 'js/datamaps-dist/datamaps.world.min.js', __FILE__ ), array( 'd3','topojson' ), false, false); 
+
         wp_enqueue_script( 'mappe', plugins_url( 'js/mappe.js', __FILE__ ), array( 'datamaps-world' ), false, true);        
     }
 
     add_action( 'wp_enqueue_scripts', 'load_datamaps_js' );
+
+
+
+    function zooming_datamap($container,$mappa_elem) {
+
+      // Passa le variabili allo script js vedi: http://code.tutsplus.com/tutorials/how-to-pass-php-data-and-strings-to-javascript-in-wordpress--wp-34699
+      // killer da finire !!!!
+      wp_localize_script( $handle, $objectName, $arrayOfValues );
+
+      $zoomMap = '
+      <div id="zoom-map-buttons" class="mappina_zoom">
+      <a href="#" class="zoom-button" data-zoom="reset"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
+      <a href="#" class="zoom-button" data-zoom="in"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+      <a href="#" class="zoom-button" data-zoom="out"><i class="fa fa-minus" aria-hidden="true"></i></a>
+      </div>
+        
+      <div id="zoom-map-container" class="columns"></div>
+      ';
+      echo $zoomMap;
+    };
 
     // Tag per template
     // Parametri:
