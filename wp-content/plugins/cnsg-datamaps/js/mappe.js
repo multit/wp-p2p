@@ -227,6 +227,11 @@ jQuery(document).ready(function($) {
 	  this.instance = new Datamaps({
 	    scope: 'world',
 	    element: this.$container.get(0),
+	    geographyConfig: {
+            popupTemplate: function(geo, data) {
+                return '<div class=\'mappina_legend\'>' + geo.properties.name + ' ' + geo.id + '</div>';
+            }
+        },
 	    fills: {
           defaultFill: '#cccccc',
           gt50: php_vars.color
