@@ -71,17 +71,24 @@ Domain Path: Domain Path
 
 
 
-    function zooming_datamap($state_codes) {
+    function zooming_datamap($state_codes,$color) {
+
+      $active_area = array("fillKey" => "gt50");
+      
+      $aree_map = array();
+      foreach ($state_codes as $code) {
+          $aree_map[$code] = $active_area;
+      }
 
       // Passa le variabili allo script js vedi: http://code.tutsplus.com/tutorials/how-to-pass-php-data-and-strings-to-javascript-in-wordpress--wp-34699
       // killer da finire !!!!
       wp_enqueue_script( 'mappe', plugins_url( 'js/mappe.js', __FILE__ ), array( 'datamaps-world' ), false, true);
 
       $dataToBePassed = array(
-            'home'            => get_stylesheet_directory_uri(),
-            'pleaseWaitLabel' => __( 'Please wait...', 'default' )
+            'state_codes'            => $aree_map,
+            'color' => $color
           );
-      wp_localize_script( 'mappe', 'php_vars', $state_codes );
+      wp_localize_script( 'mappe', 'php_vars', $dataToBePassed );
 
 
 

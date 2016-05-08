@@ -48,6 +48,9 @@ $data_fine_proj = new DateTime($data_fine_proj);
 $aree_p  = get_field('aree_geografiche');
 $aree_proj = explode(",", $aree_p);
 
+
+
+
 //Colore e icone di categoria vedi functions.php
 $categoria = get_dettagli_categoria( $post->ID );
 $rl_category_color = $categoria['colore'];  
@@ -104,9 +107,8 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 
   <!--  mapp.js -->
   <?php 
-      $state_codes = "ciao bello";
       // echo killer_datamap("mappina", $aree_proj, $rl_category_color ); 
-      zooming_datamap($aree_proj);
+      zooming_datamap($aree_proj,$rl_category_color);
   ?>
 
 

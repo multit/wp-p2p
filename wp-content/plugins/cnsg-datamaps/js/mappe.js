@@ -16,7 +16,8 @@ www.andreafiorelli.com
 
 jQuery(document).ready(function($) {
   	
-	console.log(php_vars);
+	console.log(php_vars.state_codes);
+	console.log(php_vars.color);
 
   	//$('.mappina_progetto').prepend($('.mappina_zoom'));
   	$('#zoom-map-container').prepend($('.mappina_zoom'));
@@ -228,9 +229,10 @@ jQuery(document).ready(function($) {
 	    element: this.$container.get(0),
 	    fills: {
           defaultFill: '#cccccc',
-          gt50: '#ff0000'
+          gt50: php_vars.color
         },
 	    projection: 'mercator',
+	    data: php_vars.state_codes,
 	    done: this._handleMapReady.bind(this)
 	  });
 	};
