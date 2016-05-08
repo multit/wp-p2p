@@ -63,18 +63,27 @@ Domain Path: Domain Path
         wp_enqueue_script( 'topojson', plugins_url( 'js/topojson.js', __FILE__ ), array(  'jquery' ), false, false);
         wp_enqueue_script( 'datamaps-world', plugins_url( 'js/datamaps-dist/datamaps.world.min.js', __FILE__ ), array( 'd3','topojson' ), false, false); 
 
-        wp_enqueue_script( 'mappe', plugins_url( 'js/mappe.js', __FILE__ ), array( 'datamaps-world' ), false, true);        
+       
+
     }
 
     add_action( 'wp_enqueue_scripts', 'load_datamaps_js' );
 
 
 
-    function zooming_datamap($container,$mappa_elem) {
+    function zooming_datamap($state_codes) {
 
       // Passa le variabili allo script js vedi: http://code.tutsplus.com/tutorials/how-to-pass-php-data-and-strings-to-javascript-in-wordpress--wp-34699
       // killer da finire !!!!
-      wp_localize_script( $handle, $objectName, $arrayOfValues );
+      wp_enqueue_script( 'mappe', plugins_url( 'js/mappe.js', __FILE__ ), array( 'datamaps-world' ), false, true);
+
+      $dataToBePassed = array(
+            'home'            => get_stylesheet_directory_uri(),
+            'pleaseWaitLabel' => __( 'Please wait...', 'default' )
+          );
+      wp_localize_script( 'mappe', 'php_vars', $state_codes );
+
+
 
       $zoomMap = '
       <div id="zoom-map-buttons" class="mappina_zoom">
@@ -87,6 +96,13 @@ Domain Path: Domain Path
       ';
       echo $zoomMap;
     };
+
+
+
+
+// Ole map
+
+
 
     // Tag per template
     // Parametri:
@@ -108,7 +124,7 @@ Domain Path: Domain Path
         done: handleMapReady(),
         fills: {
           defaultFill: '#cccccc',
-          gt50: '".$color."'
+          gt50: '" . $color . "'
         },
 
         geographyConfig: {

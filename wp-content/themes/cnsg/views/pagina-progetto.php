@@ -104,8 +104,9 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 
   <!--  mapp.js -->
   <?php 
+      $state_codes = "ciao bello";
       // echo killer_datamap("mappina", $aree_proj, $rl_category_color ); 
-      zooming_datamap();
+      zooming_datamap($aree_proj);
   ?>
 
 

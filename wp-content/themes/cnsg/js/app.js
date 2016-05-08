@@ -261,8 +261,7 @@ $('.info-expander').click(function(event) {
 
                  onEnter: function(element, position) {
                     var menuHeight = -($('div.revolving-menu').height());
-                    //var menuHeight = -67;
-                    console.log(menuHeight);
+                    //var menuHeight = -67;                  
                     TweenMax.to('div.revolving-menu',0.8,{ 'top': menuHeight });
                     TweenMax.to('div#logo-area',0.8,{ 'top': 67 });
                  },

@@ -16,6 +16,7 @@ www.andreafiorelli.com
 
 jQuery(document).ready(function($) {
   	
+	console.log(php_vars);
 
   	//$('.mappina_progetto').prepend($('.mappina_zoom'));
   	$('#zoom-map-container').prepend($('.mappina_zoom'));
@@ -83,7 +84,6 @@ jQuery(document).ready(function($) {
 	Zoom.prototype._handleClick = function(event) {
 		event.preventDefault();
 	  	var direction = $(event.target).parent().data("zoom");
-console.log($(event.target).parent());
 	  this._shift(direction);
 	};
 
@@ -226,6 +226,10 @@ console.log($(event.target).parent());
 	  this.instance = new Datamaps({
 	    scope: 'world',
 	    element: this.$container.get(0),
+	    fills: {
+          defaultFill: '#cccccc',
+          gt50: '#ff0000'
+        },
 	    projection: 'mercator',
 	    done: this._handleMapReady.bind(this)
 	  });
