@@ -20,7 +20,7 @@ var app = (function(document, $) {
       });
 			_userAgentInit();
 
-      // Modernizr
+      // Modernizr  SVG  ! SVG Filter
 			// SVG / PNG sostituisce i svg con PNG per i browser più vecchi
 			// Per ora abbiamo solo il logo 
       if ( typeof Modernizr != 'undefined' ) {
@@ -29,27 +29,15 @@ var app = (function(document, $) {
   			    return $(this).attr('src').replace('.svg', '.png');
   			  });
   			}
-      }
-      //console.log(Foundation.MediaQuery);
+      }      
 
-      $(window).load(function() {
-
-        // $('.share-animated-entry').css('opacity', 0);
-        // var tl = new TimelineLite();        
-        // tl.to('#ajax-loader', 0.4, {delay:0,rotation:720, scale:0, ease:Cubic.easeOut})                
-        // .to('#loader', 0.3, {autoAlpha:0, onComplete:animazioneEntry});
-
+      $(window).load(function() {       
+        var tl = new TimelineLite();        
+        tl.to('#ajax-loader', 0.4, {delay:1,rotation:720, scale:0, ease:Cubic.easeOut})                
+        .to('#loader', 0.3, {autoAlpha:0});
       });
 
 
-      function animazioneEntry() {
-          TweenMax.fromTo($('.share-animated-entry'), 1, 
-            { opacity:0 },{ opacity:1 }
-        );
-      }
-
-      
-      
 
 /*
  ######   #######  ##        #######  ########  #### 
@@ -99,7 +87,8 @@ var app = (function(document, $) {
             $(this).css('color', colors[randomnumber]);            
       });
 
-      // Colora titolini in maniera random (un solo colore random)
+
+      // Colora backgound in maniera random (un solo colore random)
       $( '.random_colored_backgr' ).each(function( index ) {            
             var message = $( this ).text();
             var lun_message = message.length;
@@ -108,10 +97,7 @@ var app = (function(document, $) {
             var randomnumber=Math.floor(Math.random()*lun_colors); 
             $(this).css('background-color', colors[randomnumber]); 
             $(this).css('color', '#FFFFFF');            
-      });      
-
-
-
+      });            
 
 /* 
 ##    ## ######## ##      ##  ######  
@@ -173,14 +159,33 @@ $('.info-expander').click(function(event) {
       });
       
       // Mostra la mappa full screen del sito
+
       $('.fullscreen-map-toggler').click(function(event) {
           event.preventDefault();          
           toggleFullscreenMap();                
       });      
 
       function toggleFullscreenMap() {
-        TweenMax.to( $(".fullscreen-mega-map-active"), 0.6, { css:{className:"fullscreen-mega-map-inactive"} });   
-        TweenMax.to( $(".fullscreen-mega-map-inactive"), 0.2, { css:{className:"fullscreen-mega-map-active"} });   
+
+        //var scrollNow = $(window).scrollTop();
+        //$('#fullscreen-mega-map').css('top', scrollNow );
+        TweenMax.to( $(".fullscreen-mega-map-active"), 0.6, { css:{className:"fullscreen-mega-map-inactive"} });    
+        TweenMax.to( $(".fullscreen-mega-map-inactive"), 0.2, { css:{className:"fullscreen-mega-map-active"} });    
+        // // Se non è visibile
+        //   if ($('#fullscreen-mega-map').css('display') === 'none') {
+        //     $('body').css('overflow', 'hidden');
+        //     $(this).parent().css('backgroundColor', '#EFEFE8');
+        //     $('#fullscreen-mega-map').css('overflow', 'auto');
+        //     TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:1,display:'block', top:$(window).scrollTop()});
+        //     $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
+        //   } 
+        //   // Se invece è il menu è aperto
+        //   else{
+        //     TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
+        //     $(this).parent().css('backgroundColor', 'transparent');
+        //     $('body').css('overflow', 'auto');
+        //     $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
+        //   }    
       };
 
       // Chiude la mappa fullscreen cliccandoci sopra ma i link continuano a funzionare
@@ -189,18 +194,19 @@ $('.info-expander').click(function(event) {
       });   
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   },   // end init function
-
-
-/*
-   ###    ##    ## #### ##     ##    ###    ######## ####  #######  ##    ## ########    ##     ## ########    ###    ########  
-  ## ##   ###   ##  ##  ###   ###   ## ##        ##   ##  ##     ## ###   ## ##          ##     ## ##         ## ##   ##     ## 
- ##   ##  ####  ##  ##  #### ####  ##   ##      ##    ##  ##     ## ####  ## ##          ##     ## ##        ##   ##  ##     ## 
-##     ## ## ## ##  ##  ## ### ## ##     ##    ##     ##  ##     ## ## ## ## ######      ######### ######   ##     ## ##     ## 
-######### ##  ####  ##  ##     ## #########   ##      ##  ##     ## ##  #### ##          ##     ## ##       ######### ##     ## 
-##     ## ##   ###  ##  ##     ## ##     ##  ##       ##  ##     ## ##   ### ##          ##     ## ##       ##     ## ##     ## 
-##     ## ##    ## #### ##     ## ##     ## ######## ####  #######  ##    ## ########    ##     ## ######## ##     ## ########  
-*/
 
 
       _animazione_logo = function() {
@@ -208,21 +214,18 @@ $('.info-expander').click(function(event) {
             // variabili altezza maassima di scrollspay e dimensioni CSS iniziali e finali
             var scrollspy_max = 570;
 
-
-            // Come valori finali use i valori applicati con i css vedi .logo_large 
             var endVal = {
-              'hb' : parseInt( $('.logo-animato').css('background-size') , 10),
-              'pt' : parseInt( $('.logo-animato').css('padding-top') , 10),
-              'mt' : parseInt( $('.logo-animato').css('margin-top') , 10),
+              'hb' : parseInt( $('.share-logo').css('background-size') , 10),
+              'pt' : parseInt( $('.share-logo').css('padding-top') , 10),
+              'mt' : parseInt( $('#logo-animato').css('margin-top') , 10),
               'bm' : parseInt( $('#logo-spacer.animated').css('height') , 10)
             };
 
-            // Questi sono i valori all'inizio
             var beginVal = {
-              'hb' : 140,  // Dimensione iniziale logo
-              'pt' : 160, // Padding-top del logo
-              'mt' : 20,  // Margin-top del logo
-              'bm' : 275,  // Altezza del logo-spacer.animated originale 300
+              'hb' : 300,  // Dimensione iniziale logo
+              'pt' : 100  ,
+              'mt' : 40,
+              'bm' : 323  // Altezza del logo-spacer.animated
             };      
             
             // Imposta lo stato iniziale
@@ -230,15 +233,11 @@ $('.info-expander').click(function(event) {
             if ( $(window).scrollTop() < scrollspy_max) {
 
               $('#logo-spacer.animated').css('height', beginVal.bm );
-              $('.logo_large.animated').css({
-                      paddingTop: beginVal.pt,
-                      marginTop: beginVal.mt,
-                      backgroundSize: beginVal.hb
-               });
-              $('#menutop-logo.animated').css({
-                      width: beginVal.issW,
-                      height: beginVal.issH                      
-               });
+              $('.share-logo.animated').css({
+                  height: beginVal.hb,
+                  paddingTop: beginVal.pt
+              });
+              TweenMax.to('.share-logo h1',0.6,{ 'font-size': '11em', 'margin-bottom': -5 });
               
             }
           
@@ -249,61 +248,56 @@ $('.info-expander').click(function(event) {
                 return percentuale;
             };
 
-            // var revolvingMenuHeight = -($('div.revolving-menu').height());
-            // $('div.revolving-menu').css({
-            //   top: revolvingMenuHeight,
-            //   //height: $(this).height();
-            // });
+            var revolvingMenuHeight = -($('div.menudue').height());
+            $('div.menudue').css({
+              top: revolvingMenuHeight,
+            });
 
             $(window).scrollspy({ 
                  min: 0 ,
                  max: scrollspy_max,
 
                  onEnter: function(element, position) {
-                    var menuHeight = -($('div.revolving-menu').height());
-                    TweenMax.to('div.revolving-menu',0.8,{ 'top': menuHeight });
-//                   TweenMax.to('div#logo-area',0.8,{ 'top': 67 });
+                    var menuHeight = -($('div.menudue').height());
+                    TweenMax.to('div.menudue',0.8,{ 'top': menuHeight });
+                    TweenMax.to('div#logo-area',0.8,{ 'top': 67 });                    
+
                  },
                  onLeave: function(element, position) {
                    
-                   TweenMax.to('div.revolving-menu',0.8,{ 'top': 0 });
-  console.log('leave');
+                   TweenMax.to('div.menudue',0.8,{ 'top': 0 });
+
                     // $('div.logo_large.animated').css({ 'padding-top':endVal.pt, 'background-size':endVal.hb, 'margin-top':endVal.mt });
                     // $('#logo-spacer.animated').css({'height': endVal.bm});
                     // $('#menutop-logo.animated').css({
                     //   width: endVal.issW,
                     //   height: endVal.issW
                     // });                    
-                    // TweenMax.to('div#logo-area',0.8,{ 'top': -200 });
+                    TweenMax.to('div#logo-area',0.8,{ 'top': -250 });
 
                  },
                  onTick: function(element, position) {
-                    // var perc = 100 * position.top / scrollspy_max;
-                    // perc = perc.toFixed(0);  // Percentuale dal top
-                    // var bgdiff_abs =  beginVal.hb - calcola_percent( beginVal.hb,endVal.hb,perc ).toFixed(0);
-                    // var ptdiff_abs =  beginVal.pt - calcola_percent( beginVal.pt,endVal.pt,perc ).toFixed(0);
-                    // var mtdiff_abs =  beginVal.mt - calcola_percent( beginVal.mt,endVal.mt,perc ).toFixed(0);
-                    // var bmdiff_abs =  beginVal.bm - calcola_percent( beginVal.bm,endVal.bm,perc ).toFixed(0);
+                    var perc = 100 * position.top / scrollspy_max;
+                    perc = perc.toFixed(0);  // Percentuale dal top
+                    var bgdiff_abs =  beginVal.hb - calcola_percent( beginVal.hb,endVal.hb,perc ).toFixed(0);
+                    var ptdiff_abs =  beginVal.pt - calcola_percent( beginVal.pt,endVal.pt,perc ).toFixed(0);
+                    var mtdiff_abs =  beginVal.mt - calcola_percent( beginVal.mt,endVal.mt,perc ).toFixed(0);
+                    var bmdiff_abs =  beginVal.bm - calcola_percent( beginVal.bm,endVal.bm,perc ).toFixed(0);
 
-                    // TweenMax.to('div.logo_large.animated',0.4,{ 'padding-top':ptdiff_abs, 'background-size':bgdiff_abs, 'margin-top':mtdiff_abs });
-                    // TweenMax.to('#logo-spacer.animated',0.8,{'height': bmdiff_abs });
+                    TweenMax.to('.share-logo.animated',0.4,{ 'padding-top':ptdiff_abs, 'margin-top':mtdiff_abs });
+                    //TweenMax.to('div.logo_large.animated',0.4,{ 'padding-top':ptdiff_abs, 'background-size':bgdiff_abs, 'margin-top':mtdiff_abs });
+                    TweenMax.to('#logo-spacer.animated',0.8,{'height': bmdiff_abs });
 
-                    // var issWdiff_abs =  beginVal.issW - calcola_percent( beginVal.issW,endVal.issW,perc ).toFixed(0);
-                    // var issHdiff_abs =  beginVal.issH - calcola_percent( beginVal.issH,endVal.issH,perc ).toFixed(0);
-                    // TweenMax.to('#menutop-logo.animated',0.8,{'width': issWdiff_abs, 'height':issHdiff_abs });
+                    //var issWdiff_abs =  beginVal.issW - calcola_percent( beginVal.issW,endVal.issW,perc ).toFixed(0);
+                    //var issHdiff_abs =  beginVal.issH - calcola_percent( beginVal.issH,endVal.issH,perc ).toFixed(0);
+                    //TweenMax.to('#menutop-logo.animated',0.8,{'width': issWdiff_abs, 'height':issHdiff_abs });
 
 
                  }
            });
 
       };  // end animazione minore
-	
-
-
-
-
-
-  return {
+	return {
 		init: _init,
     animazioneLogo: _animazione_logo
 	};

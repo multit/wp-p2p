@@ -6,11 +6,11 @@
     <title>CNSG</title>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/libraries.min.css">    
 <!--     <link rel="stylesheet" href="<?php //bloginfo('template_directory'); ?>/css/app.min.css"> -->
-    
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/bower_components/foundation-sites/dist/foundation.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flaticon.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app_override.css">
-     
+    
    <!--  
     <script src=<?php //bloginfo('template_directory'); ?>/scripts/vendor/modernizr.fbe20327.js></script>
    -->

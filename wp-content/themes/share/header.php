@@ -4,12 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share! Foundation</title>
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/libraries.min.css">    
     
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/bower_components/foundation-sites/dist/foundation.min.css"> 
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flaticon.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app_override.css">
      
 
     <?php wp_head(); ?>
@@ -54,7 +49,6 @@
             'menu' => 'Menu Categorie',
             'depth' => 3,
             'container' => false,
-            // 'items_wrap' => '%3$s',
             'link_before' => '<h3>',
             'link_after' => '</h3>',
             'menu_class' => 'medium-block-grid-3 large-block-grid-6',
@@ -100,24 +94,30 @@
 
         <!-- area logo-area -->
         <div id="logo-area">
-            <section id="hp-logo">
- <div class="share-logo">
 
-  <div class="row">
-    <div class="columns">
+
+
+<section id="hp-logo">
+  <div class="row share-logo expanded <?php ( is_home() )  ? print 'animated' : print 'not-home' ?>">
+    
+      
       <h1 class="random_colored share-animated-entry <?php (is_home())  ? print 'logo-animato' :'' ?>">SHARE!</h1>
       <h5>Research and Action to Fight Health Inequalities Worldwide!!</h5>
-    </div>
-  </div>
+
+
+
    
- </div>
+ </div> 
 </section>
+
+
+
         </div>
         <!-- end logo-area -->
             
 
         <div class="row show-for-medium-up">
-            <div id="logo-spacer" class="<?php (is_home())  ? print 'animated' :'' ?>">&nbsp;</div>
+            <div id="logo-spacer" class="test   <?php (is_home())  ? print 'animated' : print 'not home' ?>">&nbsp;</div>
         </div>
 
 

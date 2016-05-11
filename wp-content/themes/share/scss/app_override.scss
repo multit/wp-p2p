@@ -234,14 +234,7 @@ ul {
 	
 }
 
-.revolving-menu {
-	position: absolute;
-	height: 67px;
-	background-color: $colore-grigio-fondo;
-	top:0;
-	left: 0;
-	z-index: 101;
-}
+
 
 
 
@@ -716,25 +709,22 @@ b.attach_size {
 	left: 0;
 }
 
-
-
-
-		p.doc-autori, .doc-opener  {
-			@extend h3;
-			line-height: 1.3em;
-			font-size: 0.7em;
-			margin-bottom: 5px;	
-		}
-		p.doc-titolo {
-			line-height: 1.3em;
-			font-size: 0.9em;
-		}
-		div.doc-abstract {
-			display:none;
-		}
-		.doc-opener {
-			margin: 10px 0 0 0;
-		}
+p.doc-autori, .doc-opener  {
+	@extend h3;
+	line-height: 1.3em;
+	font-size: 0.7em;
+	margin-bottom: 5px;	
+}
+p.doc-titolo {
+	line-height: 1.3em;
+	font-size: 0.9em;
+}
+div.doc-abstract {
+	display:none;
+}
+.doc-opener {
+	margin: 10px 0 0 0;
+}
 
 .mappina_progetto {
 	margin:  0 0 50px 0;
@@ -921,18 +911,27 @@ ul#social li h3 {
 */
 
 
+
+.revolving-menu {
+	position: absolute;
+	height: 67px;
+	background-color: $colore-grigio-fondo;
+	top:0;
+	left: 0;
+	z-index: 101;
+}
+
+.menudue-content {
+	padding: 20px 0 10px 0;
+}
+
 div.menudue {
-	/*display: none;*/
+	top:-100px;
 	position: fixed;
-	z-index: 151;
-	top: -67px;
+	z-index: 101;
 	left: 0;
 	width: 100%;
-	height: 67px;
-	padding: 20px 0 10px 0;
-    background: $colore-grigio-fondo url('../images/cnsg-minilogo.png') no-repeat 50% 50%;
-    /*	-webkit-background-size: contain;
-	background-size: contain;*/
+    background: $colore-grigio-fondo;
 }
 
 #menudue-logo-iss {
@@ -963,6 +962,7 @@ div.menudue {
 
 */
 
+
 div#fullscreen-mega-map {
 	background-color: darken( $colore-grigio-fondo, 2% );
 	position: absolute;
@@ -972,13 +972,15 @@ div#fullscreen-mega-map {
 	width: 100%;
 	z-index: 9999;
 	padding: 50px 0 200px 0;
-	// display: none;
-	// opacity: 0;
 	margin-top: -33px;
+}
+
+.fullscreen-mega-map-container {
+	position: relative;
 }
 .fullscreen-mega-map-inactive {
 	opacity: 0;
-	display: none;;
+	display: none;
 }
 .fullscreen-mega-map-active {
 	opacity: 1;
@@ -993,17 +995,18 @@ ul#menu-menu-progetti ul {
 	padding: 10px 0 10px 0;
 }
 ul#menu-menu-progetti li, ul.sub-menu li {
-	margin: 0px;
-	
+	text-align: center;
+	margin: 0px;	
 	cursor: pointer;
 	display: block;
 }
 /*Titolo dell area */
-li.menu-item-object-progetto a {
-	font-family: $font-secondaria;
-	font-size: 18px;
-	line-height: 20px;
-	margin: 0 0 0 0;	
+li.menu-item-object-progetto a, ul#menu-menu-progetti li a {
+	display: block;
+    font-family: "Montserrat-regular";
+    font-size: 17px;
+    line-height: 20px;
+    margin: 15px 0 0 0;	
 }
 /*Titolo di secondo livello*/
 ul.sub-menu li.menu-item-object-progetto a {

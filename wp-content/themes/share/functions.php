@@ -29,6 +29,16 @@ function wpdocs_theme_name_scripts() {
   wp_enqueue_script( 'scrollify', get_template_directory_uri() . '/bower_components/jquery-scrollspy/jquery-scrollspy.js', array('jquery') );  
   wp_enqueue_script( 'gsap', get_template_directory_uri() . '/bower_components/gsap/src/minified/TweenMax.min.js', array('jquery') );
   
+
+  // Styles
+
+  wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/bower_components/font-awesome/css/font-awesome.min.css', array() );
+  //wp_enqueue_style( 'libs', get_template_directory_uri() . 'css/libraries.min.css', array() );
+  wp_enqueue_style( 'foundation', get_template_directory_uri() . '/bower_components/foundation-sites/dist/foundation.min.css', array() );
+  wp_enqueue_style( 'flaticon', get_template_directory_uri() . '/css/flaticon.css', array() );
+  wp_enqueue_style( 'app', get_template_directory_uri() . '/css/app.css', array() );
+  wp_enqueue_style( 'app_override', get_template_directory_uri() . '/css/app_override.css', array() );
+
   // Aggiunti nel footer, param true alla fine
   wp_enqueue_script( 'app-js', get_template_directory_uri() . '/js/app.js', array(),'',true );
 
