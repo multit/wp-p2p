@@ -102,7 +102,7 @@
     
       
       <h1 class="random_colored share-animated-entry <?php (is_home())  ? print 'logo-animato' :'' ?>">SHARE!</h1>
-      <h5>Research and Action to Fight Health Inequalities Worldwide!!</h5>
+      <h5>Research and Action to Fight Health Inequalities Worldwide</h5>
 
 
 

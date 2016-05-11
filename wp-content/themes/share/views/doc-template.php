@@ -48,7 +48,7 @@ $curr_col = 1;
 
 
 		<?php endif ?>
-		<a data-open = "pub<?php echo $pubb->ID; ?>">abstract</a>
+		<a data-open = "pub<?php echo $pubb->ID; ?>"><h3 class="doc-autori">abstract</h3></a>
 
 		</div>
 
