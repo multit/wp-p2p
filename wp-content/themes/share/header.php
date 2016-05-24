@@ -12,11 +12,7 @@
   </head>
   <body>
     
-    <?php if (is_home()) : ?>
-        <div id="loader">
-            <img id="ajax-loader" src="<?php bloginfo('template_directory'); ?>/images/ajax-loader01.gif" alt="">
-        </div>
-     <?php endif; ?>
+    
 
 
 
@@ -62,25 +58,11 @@
        </div> </div></div>
      <!-- End Site popoup map -->
 
-
-
-
-
         <div class="menutop"><!-- menutop -->
-
-
-
             <div class="row hp-menu-top-butta">   
-
-                <?php get_template_part( 'inc/hp-menu-top' ); ?>
-                
-
+                <?php get_template_part( 'inc/hp-menu-top' ); ?>                
             </div>
-    
         </div> <!-- End menutop -->
-
-
-
 
     <?php  
             // Menu Revolving
@@ -92,42 +74,7 @@
 
 
 
-        <!-- area logo-area -->
-        <div id="logo-area">
-
-
-
-<section id="hp-logo">
-  <div class="row share-logo expanded <?php ( is_home() )  ? print 'animated' : print 'not-home' ?>">
-    
-      
-      <h1 class="random_colored share-animated-entry <?php (is_home())  ? print 'logo-animato' :'' ?>">SHARE!</h1>
-      <h5>Research and Action to Fight Health Inequalities Worldwide</h5>
-
-
-
-   
- </div> 
-</section>
-
-
-
-        </div>
-        <!-- end logo-area -->
-            
-
-        <div class="row show-for-medium-up">
-            <div id="logo-spacer" class="test   <?php (is_home())  ? print 'animated' : print 'not home' ?>">&nbsp;</div>
-        </div>
-
-
-
-
-
-      
 
 
 
 </header> <!-- end header -->
-
-

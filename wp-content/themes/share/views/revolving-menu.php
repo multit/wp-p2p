@@ -17,13 +17,12 @@
   		<div class="columns small-1"><i class="fa fa-bars fullscreen-map-toggler"></i></div>
       <div class="columns small-10 small-centered menudue-logo">
          <a href="."> 
-         		<h3 id="logosx">centro nazionale salute globale</h3>
-          	<h3 id="logodx">italian center for global health</h3>  
+         		<h3 id="logosx" class="random_colored">SHARE</h3>          	
           </a>
       </div>
 
       <div class="columns small-1">
-          <div id="menudue-logo-iss" class="iss-logo"></div>
+          
       </div>
     </div>
 

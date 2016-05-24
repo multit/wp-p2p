@@ -222,10 +222,10 @@ $('.info-expander').click(function(event) {
             };
 
             var beginVal = {
-              'hb' : 300,  // Dimensione iniziale logo
-              'pt' : 100  ,
+              'hb' : 260,  // Dimensione iniziale logo
+              'pt' : 185  ,
               'mt' : 40,
-              'bm' : 323  // Altezza del logo-spacer.animated
+              'bm' : 270  // Altezza del logo-spacer.animated
             };      
             
             // Imposta lo stato iniziale
@@ -237,7 +237,8 @@ $('.info-expander').click(function(event) {
                   height: beginVal.hb,
                   paddingTop: beginVal.pt
               });
-              TweenMax.to('.share-logo h1',0.6,{ 'font-size': '11em', 'margin-bottom': -5 });
+              // Animazione iniziale
+              //TweenMax.to('.share-logo h1',0.6,{ 'font-size': '11em', 'margin-bottom': -5 });
               
             }
           

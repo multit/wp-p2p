@@ -94,8 +94,8 @@ margin-right: auto;*/ }
 ##       ##     ## ##    ##  ##     ## 
 ########  #######   ######    #######  
 */
-.share-logo { background-color: #e1e1cd; text-align: center; padding: 50px 0 0 0; min-height: 180px; padding-bottom: 0; }
-.share-logo h1 { font-family: 'Share-regular'; font-size: 5em; line-height: 0.5; letter-spacing: -0.05em; margin-bottom: -0.2em; }
+.share-logo { background: url("../images/share.world.logo.png") 50% 0% no-repeat; text-align: center; padding: 185px 0 0 0; margin: 30px 0 0 0; min-height: 180px; }
+.share-logo h1 { font-family: 'Share-regular'; font-size: 4em; line-height: 0.5; letter-spacing: -0.05em; margin-bottom: -0.2em; }
 .share-logo h5 { font-size: 1.2em; font-family: 'Share-regular'; }
 
 section#hp-logo { padding: 0; }
@@ -421,6 +421,23 @@ li.has-submenu i { padding: 0 0 0 10px; font-size: 0.6em; }
 ##        ##       ##     ## ##    ##   ##  ##  ####       ## 
 ##        ##       ##     ## ##    ##   ##  ##   ### ##    ## 
 ##        ########  #######   ######   #### ##    ##  ######  */
+div.hp-slide { height: 540px; }
+div.hp-slide h1 { color: #FFF; font-size: 2em; margin-bottom: 0px; padding-bottom: 10px; }
+div.hp-slide h2 { color: #FFF; }
+div.hp-slide h3, div.hp-slide p.doc-autori, div.hp-slide .doc-opener, div.hp-slide div.menutop ul li a, div.menutop ul li div.hp-slide a { color: #FFF; }
+
+div.hp-transp-slide-title { position: absolute; top: 30%; left: 70%; color: #FFF; }
+
+div.hp-slide-box div.columns { height: 280px; padding: 40px; }
+
+div.hp-slide-gradient { position: absolute; left: 0; top: 0; height: 100%; width: 100%; opacity: 1; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+99 */ background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 99%, rgba(0, 0, 0, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 99%, rgba(0, 0, 0, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 99%, rgba(0, 0, 0, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */ }
+
+div#slide01 { background: url("../images/Paul.Kagame.harvard.jpg") 50% 50% no-repeat; background-size: cover; }
+
+div#slide02 { background: url("../images/msf.org.65690.nonce.jpg") 50% 50% no-repeat; background-size: cover; }
+
+div#slide03 { background: url("../images/Paul.Kagame.harvard.jpg") 50% 50% no-repeat; background-size: cover; }
+
 li p.flex-caption { font-family: "Roboto-Slab-light"; color: #FFFFFF; background-color: #000000; margin: 0 20px 0 0; padding: 20px; position: absolute; top: 35%; left: 60%; font-size: 1.8em; line-height: 1em; font-weight: 700; }
 
 li p.flex-caption.small { color: #FFFFFF; background-color: #000000; position: absolute; top: 0; left: 50%; height: 100%; width: 50%; font-size: 1.6em; padding: 20px; font-size: 1.2em; line-height: 1.1em; font-weight: 300; }
