@@ -16,8 +16,8 @@
     <div class="row menudue-content">
   		<div class="columns small-1"><i class="fa fa-bars fullscreen-map-toggler"></i></div>
       <div class="columns small-10 small-centered menudue-logo">
-         <a href="."> 
-         		<h3 id="logosx" class="random_colored">SHARE</h3>          	
+         <a href="#top"> 
+         		<span class="share-logino random_colored">SHARE</span>          	
           </a>
       </div>
 

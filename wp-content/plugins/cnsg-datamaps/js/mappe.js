@@ -16,13 +16,16 @@ www.andreafiorelli.com
 
 jQuery(document).ready(function($) {
   	
-	console.log(php_vars.state_codes);
-	console.log(php_vars.color);
+	// console.log(php_vars.state_codes);
+	// console.log(php_vars.color);
+	// console.info(php_vars);
+
+
 
   	//$('.mappina_progetto').prepend($('.mappina_zoom'));
-  	$('#zoom-map-container').prepend($('.mappina_zoom'));
+  	//$('#zoom-map-container').prepend($('.mappina_zoom'));
 
-  	$('#zoom-map-container').css('height', '400px');
+  	$('.zoom-map-container').css('height', '450px');
 
 	function Zoom(args) {
 	  $.extend(this, {
@@ -222,8 +225,11 @@ jQuery(document).ready(function($) {
 	  return scaleSet[shift];
 	};
 
-	function Datamap() {
-	  this.$container = $("#zoom-map-container");
+	function Datamap(ele) {
+		
+	  this.$container = $(".zoom-map-container");
+	  // this.$container = ele;
+
 	  this.instance = new Datamaps({
 	    scope: 'world',
 	    element: this.$container.get(0),
@@ -233,7 +239,7 @@ jQuery(document).ready(function($) {
             }
         },
 	    fills: {
-          defaultFill: '#cccccc',
+          defaultFill: php_vars.defaultFill,
           gt50: php_vars.color
         },
 	    projection: 'mercator',
@@ -241,6 +247,7 @@ jQuery(document).ready(function($) {
 	    done: this._handleMapReady.bind(this)
 	  });
 	};
+
 
 	Datamap.prototype._handleMapReady = function(datamap) {
 	  this.zoom = new Zoom({
@@ -250,6 +257,14 @@ jQuery(document).ready(function($) {
 	}
 
 	new Datamap();
+
+
+
+	$( ".zoom-map-container" ).each(function( index ) {
+  		//new Datamap( $(this) );
+	});
+
+
 
 
 });

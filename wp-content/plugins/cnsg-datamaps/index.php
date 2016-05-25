@@ -71,10 +71,10 @@ Domain Path: Domain Path
 
 
 
-    function zooming_datamap($state_codes,$color) {
+    function zooming_datamap($state_codes, $color, $defaultFill) {
 
       $active_area = array("fillKey" => "gt50");
-      
+
       $aree_map = array();
       foreach ($state_codes as $code) {
           $aree_map[$code] = $active_area;
@@ -86,20 +86,21 @@ Domain Path: Domain Path
 
       $dataToBePassed = array(
             'state_codes'            => $aree_map,
-            'color' => $color
+            'color' => $color,
+            'defaultFill' => $defaultFill
           );
       wp_localize_script( 'mappe', 'php_vars', $dataToBePassed );
 
 
 
       $zoomMap = '
-      <div id="zoom-map-buttons" class="mappina_zoom">
-      <a href="#" class="zoom-button" data-zoom="reset"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
-      <a href="#" class="zoom-button" data-zoom="in"> <i class="fa fa-plus" aria-hidden="true"></i></a>
-      <a href="#" class="zoom-button" data-zoom="out"><i class="fa fa-minus" aria-hidden="true"></i></a>
+      <div class="zoom-map-container">
+        <div id="zoom-map-buttons" class="mappina_zoom">
+        <a href="#" class="zoom-button" data-zoom="reset"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
+        <a href="#" class="zoom-button" data-zoom="in"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+        <a href="#" class="zoom-button" data-zoom="out"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        </div>        
       </div>
-        
-      <div id="zoom-map-container" class="columns"></div>
       ';
       echo $zoomMap;
     };

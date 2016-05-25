@@ -72,7 +72,29 @@
 
 
 
+<!-- area logo-area -->
+<div id="logo-area">
 
+
+
+<section id="hp-logo">
+  <div class="row share-logo expanded <?php ( is_home() )  ? print 'animated' : print 'not-home' ?>">          
+      <h1 class="random_colored share-animated-entry <?php (is_home())  ? print 'logo-animato' :'' ?>">
+        SHARE!
+      </h1>
+      <h3 style="font-size:0.9em">GLOBAL HEALTH FOUNDATION</h3>   
+ </div> 
+</section>
+
+
+
+</div>
+<!-- end logo-area -->
+
+
+<div class="row show-for-medium-up">
+    <div id="logo-spacer" class="<?php ( is_home() ) ? print 'animated' : print 'animated'; ?>">&nbsp;</div>
+</div>
 
 
 

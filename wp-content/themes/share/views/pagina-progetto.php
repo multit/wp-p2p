@@ -48,9 +48,6 @@ $data_fine_proj = new DateTime($data_fine_proj);
 $aree_p  = get_field('aree_geografiche');
 $aree_proj = explode(",", $aree_p);
 
-
-
-
 //Colore e icone di categoria vedi functions.php
 $categoria = get_dettagli_categoria( $post->ID );
 $rl_category_color = $categoria['colore'];  
@@ -98,21 +95,17 @@ $keywords = get_terms( 'keywords', 'orderby=count&hide_empty=0' );
 
 
 <div class="columns large-8 large-push-2 medium-12 main-proj-column">
+
+
   <h3 class="proj_main_goal"><?php echo get_field('main_goal',$post->ID); ?></h3>
   
-
-
-<h2>Project Geographical Areas</h2>
- <div id="mappina" class="mappina_progetto columns  "></div>
-
+  <h2>Project Geographical Areas</h2>
+  
+  <div id="mappina" class="mappina_progetto columns"></div>
   <!--  mapp.js -->
   <?php 
-      // echo killer_datamap("mappina", $aree_proj, $rl_category_color ); 
       zooming_datamap($aree_proj,$rl_category_color);
   ?>
-
-
-
   <?php the_content( ); ?>
 
 </div>

@@ -6,31 +6,6 @@
 
 
 
-<!-- area logo-area -->
-<div id="logo-area">
-
-
-
-<section id="hp-logo">
-  <div class="row share-logo expanded <?php ( is_home() )  ? print 'animated' : print 'not-home' ?>">          
-      <h1 class="random_colored share-animated-entry <?php (is_home())  ? print 'logo-animato' :'' ?>">
-        SHARE!
-      </h1>
-      <h3 style="font-size:0.9em">GLOBAL HEALTH FOUNDATION</h3>   
- </div> 
-</section>
-
-
-
-</div>
-<!-- end logo-area -->
-        
-
-<div class="row show-for-medium-up">
-    <div id="logo-spacer" class="test   <?php (is_home())  ? print 'animated' : print 'not home' ?>">&nbsp;</div>
-</div>
-
-
 
 
 
@@ -67,11 +42,21 @@
 
 <div class="row hp-slide-box">
   <div class="columns small-12 large-6" id="slide02"><div class="hp-slide-gradient"></div></div>
-  <div class="columns small-12 large-6">immagine3</div>
+  <div class="columns small-12 large-6">
+    
+<h2 style="color:#25545d">Share Focus On</h2>
+    <h1 style="color:#25545d">Lorem ipsum dolor sit amet, consectetur adipisicing elitut labore</h1>
+    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderitsunt in culpa qui officia deserunt mollit anim id est laborum
+
+  </div>
 </div>
 
 <div class="row hp-slide-box">  
-  <div class="columns small-12 large-6">immagine3</div>
+  <div class="columns small-12 large-6">
+    <h2 style="color:#8a8444">Share Focus On</h2>
+    <h1 style="color:#8a8444">Lorem ipsum dolor sit amet, consectetur adipisicing elitut labore</h1>
+    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderitsunt in culpa qui officia deserunt mollit anim id est laborum
+  </div>
   <div class="columns small-12 large-6" id="slide03"><div class="hp-slide-gradient"></div></div>
 </div>
 
@@ -192,10 +177,20 @@
 
 
 <section id="maps">
+
   <div class="row">
     <div class="columns large-12"><div class="section-title titolino">
-      <span class="random_colored">Global Health </span><b class="random_colored">World Maps</b></div> </div>
+      <span class="random_colored">Health </span><b class="random_colored">Maps</b></div> </div>
   </div>
+
+
+  <div class="row">
+    
+  
+
+  </div>
+
+
 
   <div class="row">
     <div class="columns large-4">
@@ -204,16 +199,32 @@
     <div class="columns large-3"><div class="button float-right">Filtra mappe:&nbsp;&nbsp;<i class="fa fa-bars"></i></div></div>
   </div>
 
-
-
   <div class="row">
-    <div class="columns large-4"><p class="hp-news-titolo">Mappa 01</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cumque voluptas, molestiae, eos culpa quod sint alias nemo perferendis optio praesentium molestias rem aut eaque repellat fuga velit labore explicabo!</div>
-    <div class="columns-large-8"><img src="http://www.andreafiorelli.com/cnsg/wp-content/uploads/2016/04/Untitled-1.jpg" alt=""></div>
+    <div class="columns large-4">
+      <p class="hp-news-titolo">Mappa 01</p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Consequuntur cumque voluptas, molestiae, eos culpa quod sint alias nemo perferendis optio 
+      praesentium molestias rem aut eaque repellat fuga velit labore explicabo!
+    </div>
+    
+    <div class="columns large-8">      
+    <?php 
+          $aree_proj = array ( 0 => "USA", 1 => "ITA" );
+          $rl_category_color = "#8A8444";
+          $defaultFill = "#e1e1cd";
+          zooming_datamap($aree_proj, $rl_category_color, $defaultFill);
+      ?>
+    </div>
   </div>
+
+  
+
+
   <div class="row">
     <div class="columns large-4"><p class="hp-news-titolo">Mappa 02</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cumque voluptas, molestiae, eos culpa quod sint alias nemo perferendis optio praesentium molestias rem aut eaque repellat fuga velit labore explicabo!</div>
     <div class="columns-large-8"><img src="http://www.andreafiorelli.com/cnsg/wp-content/uploads/2016/04/Untitled-2.jpg" alt=""></div>
   </div>
+  
   <div class="row">
     <div class="columns large-4"><p class="hp-news-titolo">Mappa 03</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cumque voluptas, molestiae, eos culpa quod sint alias nemo perferendis optio praesentium molestias rem aut eaque repellat fuga velit labore explicabo!</div>
     <div class="columns-large-8"><img src="http://www.andreafiorelli.com/cnsg/wp-content/uploads/2016/04/Untitled-3.jpg" alt=""></div>
